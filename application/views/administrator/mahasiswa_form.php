@@ -34,6 +34,17 @@
         <?php echo form_error('kelas_mhs','<div class="text-danger small" ml-3>')?>
     </div>
 
+    <div class="form-group">
+        <label>DOSEN MAHASISWA</label>
+        <select name="dosen_mhs" class="form-control" placeholder="Masukkan Dosen Mahasiswa">
+        <option value="">Masukkan Dosen Mahasiswa</option>
+		<option value="dosen01">Dosen 01</option>
+		<option value="dosen02">Dosen 02</option>
+		<option value="dosen03">Dosen 03</option>
+	</select>
+        <?php echo form_error('kelas_mhs','<div class="text-danger small" ml-3>')?>
+    </div>
+
     <button type="submit" class='btn btn-primary'>Simpan</button>
 
 </form>

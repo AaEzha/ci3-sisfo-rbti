@@ -2,9 +2,18 @@
 
 class  Mahasiswa extends CI_Controller{
 
+    public function __construct(){
+        parent::__construct();
+        if($this->session->userdata('hak_akses')!='1'){
+            $this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert">
+            Anda belum login! <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span></button></div>');
+            redirect('welcome');
+        }
+    }
+
     public function index(){
-        $this->load->model('Mahasiswa_model');
-        $data['mahasiswa'] = $this ->Mahasiswa_model->tampil_data()->result();
+        $data['mahasiswa'] = $this->db->query("SELECT * FROM tb_mahasiswa ORDER BY nim_mhs ASC")->result();
         $this->load->view('templates_administrator/header');
         $this->load->view('templates_administrator/sidebar');
         $this->load->view('administrator/mahasiswa',$data);
@@ -19,6 +28,7 @@ class  Mahasiswa extends CI_Controller{
             'pass_mhs'   =>set_value('pass_mhs'),
             'nama_mhs'   =>set_value('nama_mhs'),
             'kelas_mhs'   =>set_value('kelas_mhs'),
+            'dosen_mhs'   =>set_value('dosen_mhs'),
 
         );
 
@@ -38,7 +48,8 @@ class  Mahasiswa extends CI_Controller{
                 'nim_mhs' =>$this->input->post('nim_mhs',TRUE),
                 'pass_mhs'  =>$this->input->post('pass_mhs',TRUE),
                 'nama_mhs'  =>$this->input->post('nama_mhs',TRUE),
-                'kelas_mhs'  =>$this->input->post('kelas_mhs',TRUE)
+                'kelas_mhs'  =>$this->input->post('kelas_mhs',TRUE),
+                'dosen_mhs'  =>$this->input->post('dosen_mhs',TRUE)
             );
 
             $this->load->model('Mahasiswa_model');
@@ -57,6 +68,7 @@ class  Mahasiswa extends CI_Controller{
         $this->form_validation->set_rules('pass_mhs','pass_mhs','required',['required'=>'Password mahasiswa wajib diisi!']);
         $this->form_validation->set_rules('nama_mhs','nama_mhs','required',['required'=>'Nama mahasiswa wajib diisi!']);
         $this->form_validation->set_rules('kelas_mhs','kelas_mhs','required',['required'=>'Kelas mahasiswa wajib diisi!']);
+        $this->form_validation->set_rules('dosen_mhs','dosen_mhs','required',['required'=>'Dosen mahasiswa wajib diisi!']);
     }
 
     public function update($id_mhs){
@@ -75,12 +87,14 @@ class  Mahasiswa extends CI_Controller{
         $pass_mhs=$this->input->post('pass_mhs');
         $nama_mhs=$this->input->post('nama_mhs');
         $kelas_mhs=$this->input->post('kelas_mhs');
+        $dosen_mhs=$this->input->post('dosen_mhs');
 
         $data=array(
             'nim_mhs'=>$nim_mhs,
             'pass_mhs'=>$pass_mhs,
             'nama_mhs'=>$nama_mhs,
             'kelas_mhs'=>$kelas_mhs,
+            'kelas_mhs'=>$dosen_mhs,
         );
 
         $where=array(

@@ -16,7 +16,8 @@
             <th>NIM</th>
             <th>PASSWORD</th>
             <th>NAMA</th>
-            <th>NAMA</th>
+            <th>KELAS</th>
+            <th>DOSEN PENGAJAR</th>
             <th colspan="2">AKSI</th>
         </tr>
 
@@ -29,6 +30,7 @@
             <td><?php echo $mhs->pass_mhs?></td>
             <td><?php echo $mhs->nama_mhs?></td>
             <td><?php echo $mhs->kelas_mhs?></td>
+            <td><?php echo $mhs->dosen_mhs?></td>
             <td width="20px"><?php echo anchor('administrator/mahasiswa/update/'.$mhs->id_mhs,'<div class="btn btn=sm btn-primary">
             <i class="fa fa-edit"></i></div>') ?></td>
              <td width="20px"><?php echo anchor('administrator/mahasiswa/delete/'.$mhs->id_mhs,'<div class="btn btn=sm btn-danger">

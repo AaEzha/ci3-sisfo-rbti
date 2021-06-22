@@ -32,9 +32,7 @@
    <!-- body -->
    <body class="main-layout">
       <!-- loader  -->
-      <div class="loader_bg">
-         <div class="loader"><img src="<?php echo base_url()?>assets/images/loading.gif" alt="#"/></div>
-      </div>
+   
       <!-- end loader -->
       <!-- top -->
                     <!-- header -->
@@ -43,7 +41,7 @@
                <a href="Javascript:void(0)"><i class="fa fa-search" aria-hidden="true"></i></a>
             </div>
             <div class="right">
-               <a href="Javascript:void(0)"><i class="fa fa-user" aria-hidden="true"></i></a>
+               <a href="<?php echo base_url('welcome/logout')?>"><i class="fa fa-sign-out" aria-hidden="true"></i>logout</a>
             </div>
             <div class="container">
                <div class="row d_flex">
@@ -52,12 +50,15 @@
                         <a href="index.html"></a>
                      </div>
                   </div>
-                  <div class="col-lg-19 offset-lg-3 col-md-12 col-sm-9">
+                  <div class="col-lg-10 offset-lg-1 col-md-12 col-sm-9">
                      <div class="navbar-area">
                         <nav class="site-navbar">
                            <ul>
-                              <li><a class="active" href="index.html">Home</a></li>
-                              <li><a href="about.html">E-Proposal</a></li>
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                              <li><a class="active" href="<?php echo base_url('/mahasiswa/dashboard')?>">Home</a></li>
+                              <li><a href="<?php echo base_url('/mahasiswa/eproposal')?>">E-Proposal</a></li>
                               <li><a href="news.html">Materi</a></li>
                               <li><a href="doctores.html">Profil</a></li>
                                
@@ -72,4 +73,3 @@
             </div>
          </header>
       <!-- end header -->
-   
