@@ -1,7 +1,7 @@
 <div class="container-fluid">
 
     <div class="alert alert-success" roles="alert">
-        <i class="fas fa-user-friends"></i>BIODATA TIM
+        <i class="fas fa-user-friends"></i>BAB 2 - BIODATA TIM
     </div>
 
     <?php echo $this->session->flashdata('pesan')?>
@@ -25,7 +25,7 @@
             <td><?php echo $abi->nama_hustler?></td>
             <td><?php echo $abi->nama_hipster?></td>
             <td><?php echo $abi->nama_hacker?></td>
-            <td width="20px"><?php echo anchor('administrator/biodatatim/detail/'.$abi->id_biodatatim,'<div class="btn btn=sm btn-primary">
+            <td width="20px"><?php echo anchor('administrator/biodatatim/detail/'.$abi->id_proposal,'<div class="btn btn=sm btn-primary">
             <i class="fa fa-eye"></i></div>') ?></td>
         </tr>
         <?php endforeach; ?>

@@ -1,7 +1,7 @@
 <div class="container-fluid">
 
     <div class="alert alert-success" roles="alert">
-        <i class="fas fa-user-friends"></i>START-UP
+        <i class="fas fa-user-friends"></i>BAB 1 - START-UP
     </div>
 
     <?php echo $this->session->flashdata('pesan')?>
@@ -21,7 +21,7 @@
             <td width="20px"><?php echo $no++ ?></td>
             <td><?php echo $ast->nim_start_up?></td>
             <td><?php echo $ast->nama_start_up?></td>
-            <td width="20px"><?php echo anchor('administrator/startup/detail/'.$ast->id_start_up,'<div class="btn btn=sm btn-primary">
+            <td width="20px"><?php echo anchor('administrator/startup/detail/'.$ast->id_proposal,'<div class="btn btn=sm btn-primary">
             <i class="fa fa-eye"></i></div>') ?></td>
         </tr>
         <?php endforeach; ?>

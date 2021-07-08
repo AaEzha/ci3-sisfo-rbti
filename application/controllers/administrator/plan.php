@@ -13,15 +13,37 @@ class  Plan extends CI_Controller{
     }
 
     public function index(){
-        $data['admplan'] = $this->db->query("SELECT * FROM tb_plan")->result();
+        $this->db->select('*');
+        $this->db->from('tb_plan b');
+        $this->db->join('tb_master_proposal m', 'b.id_proposal = m.id_proposal', 'inner');
+        $data['admplan '] = $this->db->get()->result();
         $this->load->view('templates_administrator/header');
         $this->load->view('templates_administrator/sidebar');
         $this->load->view('administrator/plan',$data);
         $this->load->view('templates_administrator/footer');
     }
 
+    public function detail($id_proposal){
+        $data['title'] = "Business Plan";
+        //$id= $this->session->userdata('uname_user');
+        $this->session->set_userdata('id_proposal', $id_proposal);
+        $this->db->select('*');
+        $this->db->from('tb_plan b');
+        $this->db->join('tb_master_proposal m', 'b.id_proposal = m.id_proposal', 'inner');
+        $this->db->where("b.id_proposal = '$id_proposal'");
+        $data['admplandetail'] = $this->db->get()->result();
+      
+      
+
+        $this->load->view('templates_administrator/header');
+        $this->load->view('templates_administrator/sidebar');
+        $this->load->view('administrator/plan_detail',$data);
+        $this->load->view('templates_administrator/footer');
+    }
+
+
    
 
 }
 
-?>
+?> 

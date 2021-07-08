@@ -13,14 +13,15 @@ class Reviewproduk extends CI_Controller {
     }
 
 
-    public function index(){
-        $data['title'] = "Review Produk";
-        $id= $this->session->userdata('uname_user');
-        $data['reviewproduk'] = $this->db->query("SELECT * FROM tb_solusi WHERE nim_solusi='$id'")->result();
+    public function index($id_proposal){
+        $data['title'] = "Reviewproduk";
+        //$id= $this->session->userdata('uname_user');
+        $this->session->set_userdata('id_proposal', $id_proposal);
+        $data['reviewproduk'] = $this->db->query("SELECT * FROM tb_solusi WHERE id_proposal='$id_proposal'")->result();
 
 
-        $this->load->view('mahasiswa/reviewproduk',$data);
         $this->load->view('templates_mahasiswa/header_proposal');
+        $this->load->view("mahasiswa/reviewproduk",$data);
         $this->load->view('templates_mahasiswa/footer');
     }
     
@@ -30,6 +31,7 @@ class Reviewproduk extends CI_Controller {
         
         $data=array(
             'id_solusi'               =>set_value('id_solusi'),
+            'id_proposal'             =>set_value('id_proposal'),
             'nim_solusi'              =>set_value('nim_solusi'),
             'nama_solusi'             =>set_value('nama_solusi'),
             'deskripsi_solusi'        =>set_value('deskripsi_solusi'),
@@ -60,66 +62,88 @@ class Reviewproduk extends CI_Controller {
             $this->input();
             
         }else{
-            
+                $id_proposal            = $this->session->id_proposal;
                 $nim_solusi             = $this->session->uname_user;
                 $nama_solusi            = strtoupper($this->input->post('nama_solusi'));
                 $deskripsi_solusi       =$this->input->post('deskripsi_solusi');
                 $logo_solusi            =$_FILES['logo_solusi']['name'];
-                 if($logo_solusi=''){}else{
+                 if($logo_solusi!=''){
                     $config['upload_path']      ='./assets/files';
                     $config['allowed_types']    ='jpg|jpeg|png|tiff';
                     $config['max_size']         = 2073; 
                     $this->load->library('upload',$config);
                     if(!$this->upload->do_upload('logo_solusi')){
-                        echo "photo gagal diupload!";
+                        //echo "photo gagal diupload!";
+                        $this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        Photo Gagal Di Upload! <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span></button></div>');
+                        redirect('mahasiswa/reviewproduk', $id_proposal);
                     }else{
                     $logo_solusi=$this->upload->data('file_name');
                     }}
+
+                
                 $prev_ui1_solusi            =$_FILES['prev_ui1_solusi']['name'];
-                    if($prev_ui1_solusi=''){}else{
+                    if($prev_ui1_solusi!=''){
                         $config['upload_path']      ='./assets/files';
                         $config['allowed_types']    ='jpg|jpeg|png|tiff';
                         $config['max_size']         = 2073; 
                         $this->load->library('upload',$config);
                         if(!$this->upload->do_upload('prev_ui1_solusi')){
-                            echo "photo gagal diupload!";
+                            //echo "photo gagal diupload!";
+                        $this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        Photo Gagal Di Upload! <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span></button></div>');
+                        redirect('mahasiswa/reviewproduk', $id_proposal);
                         }else{
                             $prev_ui1_solusi=$this->upload->data('file_name');
                         }}
                 $prev_ui2_solusi            =$_FILES['prev_ui2_solusi']['name'];
-                    if($prev_ui2_solusi=''){}else{
+                    if($prev_ui2_solusi!=''){
                         $config['upload_path']      ='./assets/files';
                         $config['allowed_types']    ='jpg|jpeg|png|tiff';
                         $config['max_size']         = 2073; 
                         $this->load->library('upload',$config);
                         if(!$this->upload->do_upload('prev_ui2_solusi')){
-                            echo "photo gagal diupload!";
+                            //echo "photo gagal diupload!";
+                        $this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        Photo Gagal Di Upload! <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span></button></div>');
+                        redirect('mahasiswa/reviewproduk', $id_proposal);
                         }else{
                             $prev_ui2_solusi=$this->upload->data('file_name');
                         }}
                 $prev_ui3_solusi            =$_FILES['prev_ui3_solusi']['name'];
-                    if($prev_ui3_solusi=''){}else{
+                    if($prev_ui3_solusi!=''){
                         $config['upload_path']      ='./assets/files';
                         $config['allowed_types']    ='jpg|jpeg|png|tiff';
                         $config['max_size']         = 2073; 
                         $this->load->library('upload',$config);
                         if(!$this->upload->do_upload('prev_ui3_solusi')){
-                            echo "photo gagal diupload!";
+                             //echo "photo gagal diupload!";
+                        $this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        Photo Gagal Di Upload! <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span></button></div>');
+                        redirect('mahasiswa/reviewproduk', $id_proposal);
                         }else{
                             $prev_ui3_solusi=$this->upload->data('file_name');
                         }}
                 
                 $prev_ui4_solusi            =$_FILES['prev_ui4_solusi']['name'];
-                    if($prev_ui4_solusi=''){}else{
+                    if($prev_ui4_solusi!=''){
                         $config['upload_path']      ='./assets/files';
                         $config['allowed_types']    ='jpg|jpeg|png|tiff';
                         $config['max_size']         = 2073; 
                         $this->load->library('upload',$config);
                         if(!$this->upload->do_upload('prev_ui4_solusi')){
-                            echo "photo gagal diupload!";
+                            //echo "photo gagal diupload!";
+                        $this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        Photo Gagal Di Upload! <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span></button></div>');
+                        redirect('mahasiswa/reviewproduk', $id_proposal);
                         }else{
                             $prev_ui4_solusi=$this->upload->data('file_name');
-                        }}
+                        }} 
                 $tahun_buat_solusi       =$this->input->post('tahun_buat_solusi');
                 $link_vid_solusi         =$this->input->post('link_vid_solusi');
                 $link_prod_solusi        =$this->input->post('link_prod_solusi');
@@ -129,6 +153,7 @@ class Reviewproduk extends CI_Controller {
                 $data=array(
 
 
+                'id_proposal'           =>$id_proposal,
                 'nim_solusi'           =>$nim_solusi,
                 'nama_solusi'          =>$nama_solusi,
                 'deskripsi_solusi'     =>$deskripsi_solusi,
@@ -151,7 +176,7 @@ class Reviewproduk extends CI_Controller {
             $this->session->set_flashdata('pesan','<div class="alert alert-success alert-dismissible fade show" role="alert">
             Data Review Produk Berhasil Ditambahkan! <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span></button></div>');
-            redirect('mahasiswa/reviewproduk');
+            redirect("mahasiswa/reviewproduk/index/$id_proposal");
 
         }
     }
@@ -168,12 +193,12 @@ class Reviewproduk extends CI_Controller {
 
     }
 
-    public function update($id_start_up){
-        $where=array('id_start_up'=>$id_start_up);
+    public function update($id_solusi){
+        $where=array('id_solusi'=>$id_solusi);
         $this->load->model('Startup_model');
         $data['startup']=$this->Startup_model->edit_data($where,'tb_start_up')->result();
         $this->load->view('templates_mahasiswa/header_proposal');
-        $this->load->view('mahasiswa/startup_update', $data );
+        $this->load->view('mahasiswa/reviewproduk_update', $data );
         $this->load->view('templates_mahasiswa/footer');
 
     }

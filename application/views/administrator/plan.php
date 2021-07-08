@@ -10,6 +10,7 @@
         <tr>
             <th>NO</th>
             <th>NIM</th>
+            <th>JUDUL PROPOSAL</th>
             <th>AKSI</th>
         </tr>
 
@@ -19,7 +20,8 @@
         <tr>
             <td width="20px"><?php echo $no++ ?></td>
             <td><?php echo $apl->nim_plan?></td>
-            <td width="20px"><?php echo anchor('administrator/startup/detail/'.$apl->id_plan,'<div class="btn btn=sm btn-primary">
+            <td><?php echo $apl->judul_proposal?></td>
+            <td width="20px"><?php echo anchor('administrator/plan/detail/'.$apl->id_proposal,'<div class="btn btn=sm btn-primary">
             <i class="fa fa-eye"></i></div>') ?></td>
         </tr>
         <?php endforeach; ?>

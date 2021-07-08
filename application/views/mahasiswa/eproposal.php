@@ -16,26 +16,33 @@
                            <th>NO</th>
                            <th>NIM MAHASISWA</th>
                            <th>JUDUL PROPOSAL</th>
-                           <th colspan="7">AKSI</th>
+                           <th>TEMA PROPOSAL</th>
+                           <th>BAB <br>1</th>
+                           <th>BAB 2</th>
+                           <th>BAB 3</th>
+                           <th>BAB 4</th>
+                           <th>BAB 5</th>
+                           <th colspan="2">AKSI</th>
                
-                     </tr>
+                     </tr> 
 
                      <?php $no=1; foreach($masterproposal as $mp) :  ?>
                      <tr>
                         <td><?php echo $no++ ?></td>
                         <td><?php echo $mp->nim_mhs ?></td>
                         <td><?php echo $mp->judul_proposal ?></td>
-                        <td width="10px"><?php echo anchor('mahasiswa/startup/index/'.$mp->id_proposal,'<div class="btn btn=sm btn-primary" data-toggle="tooltip" data-placement="top" title="BAB 1">
+                        <td></td>
+                        <td width="10px"><?php echo anchor('mahasiswa/startup/index/'.$mp->id_proposal,'<div class="btn btn=sm btn-primary" data-toggle="tooltip" data-placement="top" title="START UP">
                            <i class="fa fa-plus"></i></div>') ?></td>
-                        <td width="10px"><?php echo anchor('mahasiswa/businessplan/update/'.$mp->id_proposal,'<div class="btn btn=sm btn-primary" data-toggle="tooltip" data-placement="top" title="BAB 2">
+                        <td width="10px"><?php echo anchor('mahasiswa/biodatatim/index/'.$mp->id_proposal,'<div class="btn btn=sm btn-primary" data-toggle="tooltip" data-placement="top" title="BIODATA TIM">
                            <i class="fa fa-plus"></i></div>') ?></td>
-                        <td width="10px"><?php echo anchor('mahasiswa/businessplan/update/'.$mp->id_proposal,'<div class="btn btn=sm btn-primary" data-toggle="tooltip" data-placement="top" title="BAB 3">
+                        <td width="10px"><?php echo anchor('mahasiswa/reviewproduk/index/'.$mp->id_proposal,'<div class="btn btn=sm btn-primary" data-toggle="tooltip" data-placement="top" title="REVIEW PRODUK">
                            <i class="fa fa-plus"></i></div>') ?></td>
-                        <td width="10px"><?php echo anchor('mahasiswa/businessplan/update/'.$mp->id_proposal,'<div class="btn btn=sm btn-primary" data-toggle="tooltip" data-placement="top" title="BAB 4">
+                        <td width="10px"><?php echo anchor('mahasiswa/paperpitching/index/'.$mp->id_proposal,'<div class="btn btn=sm btn-primary" data-toggle="tooltip" data-placement="top" title="PAPER PITCHING">
                            <i class="fa fa-plus"></i></div>') ?></td>
-                        <td width="10px"><?php echo anchor('mahasiswa/businessplan/update/'.$mp->id_proposal,'<div class="btn btn=sm btn-primary" data-toggle="tooltip" data-placement="top" title="BAB 5">
+                        <td width="10px"><?php echo anchor('mahasiswa/businessplan/index/'.$mp->id_proposal,'<div class="btn btn=sm btn-primary" data-toggle="tooltip" data-placement="top" title="BUSINESS PLAN">
                            <i class="fa fa-plus"></i></div>') ?></td>
-                        <td width="10px"><?php  echo anchor('mahasiswa/cetak/cetakProposal/'.$mp->id_proposal,'<div class="btn btn=sm btn-success">
+                        <td width="10px"><?php  echo anchor('mahasiswa/cetak/cetakProposal/'.$mp->id_proposal,'<div class="btn btn=sm btn-success" data-toggle="tooltip" data-placement="top" title="CETAK PDF">
                            <i class="fa fa-download"></i></div>') ?></td>
                         <td width="10px"><?php echo anchor('mahasiswa/eproposal/delete/'.$mp->id_proposal,'<div class="btn btn=sm btn-danger">
                            <i class="fa fa-trash"></i></div>') ?></td>

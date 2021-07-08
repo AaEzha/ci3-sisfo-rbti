@@ -4,7 +4,7 @@
                   <div class="latest text_align_center" >
                   <table class="table table-bordered table-stripped table-hover" >
     
-
+  
         <div class="alert alert-danger col-md-6" role="alert">
                 <i class="fas fa-user-friends"></i><h2>BUSINESS PLAN</h2></div>
 

@@ -5,6 +5,8 @@
     .text_content{
         text-indent: 50px;
     }
+
+    @page{margin: 0.2in 0.5in 0.2in 0.5in;}
     
 </style>
 <center>

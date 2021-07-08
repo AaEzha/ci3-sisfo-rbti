@@ -4,7 +4,7 @@
       <br>
     <br>
   
-
+ 
           
             <div class="alert alert-danger col-md-6" role="alert">
                 <i class="fas fa-user-friends"></i><h2>UPDATE BIODATA TIM<h2></div>
@@ -30,6 +30,7 @@
                 <label><h4>TELP HUSTLER</h4></label>
                 <input type="text"  name="telp_hustler" class="form-control" value="<?php echo $bt->telp_hustler?>">
                 <?php echo form_error('telp_hustler','<div class="text-danger small" ml-3>')?>
+                <h6>(Hanya angka)</h6>
             </div>
 
             <div class="form-group col-md-6 ">
@@ -62,6 +63,7 @@
                 <label><h4>TELP HIPSTER</h4></label>
                 <input type="text"  name="telp_hipster" class="form-control" value="<?php echo $bt->telp_hipster?>">
                 <?php echo form_error('telp_hipster','<div class="text-danger small" ml-3>')?>
+                <h6>(Hanya angka)</h6>
             </div>
 
             <div class="form-group col-md-6 ">
@@ -95,6 +97,7 @@
                 <label><h4>TELP HACKER</h4></label>
                 <input type="text"  name="telp_hacker" class="form-control" value="<?php echo $bt->telp_hacker?>">
                 <?php echo form_error('telp_hacker','<div class="text-danger small" ml-3>')?>
+                <h6>(Hanya angka)</h6>
             </div>
 
             <div class="form-group col-md-6 ">

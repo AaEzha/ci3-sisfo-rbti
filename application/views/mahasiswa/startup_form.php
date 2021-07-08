@@ -31,11 +31,13 @@
             </div>
             <div class="form-group col-md-6">
             <label><h4>STURKTUR ORGANISASI</h4></label>
+            
             </div>      
             <div class="form-group col-md-6">
                 <input type="file" name="struktur_start_up" id="img" accept="image/*" placeholder="Masukkan File Struktur Organisasi" class="custom-file-input">
                 <label class="custom-file-label" for="customFile">Pilih File Struktur Organisasi</label>
                 <?php echo form_error('struktur_start_up','<div class="text-danger small" ml-10>')?>
+                <h6>(JPG/JPEG/TIFF/PNG Max 2 MB)</h6>
             </div>
             <div class="form-group col-md-6">
             <label><h4>LOGO PERUSAHAAN</h4></label>
@@ -44,6 +46,7 @@
                 <input type="file" name="logo_start_up"  id="img" accept="image/*" placeholder="Masukkan File Logo Perusahaan" class="custom-file-input">
                 <label class="custom-file-label" for="customFile">Pilih File Logo Perusahaan</label>
                 <?php echo form_error('logo_start_up','<div class="text-danger small" ml-3>')?>
+                <h6>(JPG/JPEG/TIFF/PNG Max 2 MB)</h6>
             </div>
             <div class="form-group col-md-6 ">
                 <label><h4>TAGLINE PERUSAHAAN</h4></label>

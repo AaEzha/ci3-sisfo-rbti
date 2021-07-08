@@ -4,6 +4,7 @@ class Cetak extends CI_Controller {
 
     public function __construct(){
         parent::__construct();
+        $this->load->model('eproposal_model');
         if($this->session->userdata('hak_akses')!='3'){
             $this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert">
             Anda belum login! <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -15,7 +16,7 @@ class Cetak extends CI_Controller {
 
     public function index(){
         $data['title'] = "Cetak";
-        $id= $this->session->userdata('uname_user');
+        $id= $this->session->set_userdata('id_proposal', $id_proposal);
         $printp['proposal'] = $this->db->query("SELECT tb_master_proposal.id_proposal, tb_master_proposal.judul_proposal,tb_master_proposal.nim_mhs, tb_start_up.nama_start_up,tb_start_up.visi_start_up,tb_start_up.misi_start_up,tb_start_up.struktur_start_up,tb_start_up.logo_start_up,
         tb_start_up.tagline_start_up,tb_biodatatim.nama_hustler,tb_biodatatim.alamat_hustler,tb_biodatatim.telp_hustler,tb_biodatatim.email_hustler,tb_biodatatim.tugas_hustler,
         tb_biodatatim.nama_hipster,tb_biodatatim.alamat_hipster,tb_biodatatim.telp_hipster,tb_biodatatim.email_hipster,tb_biodatatim.tugas_hipster, 
@@ -36,14 +37,22 @@ class Cetak extends CI_Controller {
         $this->load->view('mahasiswa/cetakproposal/', $data);
         $this->load->view('templates_mahasiswa/footer');
     }
-
+ 
 
 
     public function cetakProposal($id_proposal){
         $this->load->library('dompdf_gen');
+        $this->session->set_userdata('id_proposal', $id_proposal);
         $data['title'] = "Cetak";
-        $id= $this->session->userdata('uname_user');
-        $cetakp['cetakpro'] = $this->db->query("SELECT tb_start_up.nama_start_up,tb_start_up.visi_start_up,tb_start_up.misi_start_up,tb_start_up.struktur_start_up,tb_start_up.logo_start_up,
+        $data['user'] = $this->db->get_where('tb_user', ['uname_user' => $this->session->userdata('uname_user')])->row_array();
+        $data['cetakpro'] = $this->eproposal_model->cetakPro($id_proposal);
+
+        
+       
+        
+        /*$data['title'] = "Cetak";
+        $id= $this->session->set_userdata('id_proposal', $id_proposal);*/
+        /*$cetakp['cetakpro'] = $this->db->query("SELECT tb_start_up.nama_start_up,tb_start_up.visi_start_up,tb_start_up.misi_start_up,tb_start_up.struktur_start_up,tb_start_up.logo_start_up,
         tb_start_up.tagline_start_up,tb_biodatatim.nama_hustler,tb_biodatatim.alamat_hustler,tb_biodatatim.telp_hustler,tb_biodatatim.email_hustler,tb_biodatatim.tugas_hustler,
         tb_biodatatim.nama_hipster,tb_biodatatim.alamat_hipster,tb_biodatatim.telp_hipster,tb_biodatatim.email_hipster,tb_biodatatim.tugas_hipster, 
         tb_biodatatim.nama_hacker,tb_biodatatim.alamat_hacker,tb_biodatatim.telp_hacker,tb_biodatatim.email_hacker,tb_biodatatim.tugas_hacker,
@@ -56,9 +65,9 @@ class Cetak extends CI_Controller {
         INNER JOIN tb_solusi ON tb_solusi.nim_solusi=tb_start_up.nim_start_up
         INNER JOIN tb_paper_pitching ON tb_paper_pitching.nim_pp=tb_start_up.nim_start_up
         INNER JOIN tb_plan ON tb_plan.nim_plan=tb_start_up.nim_start_up
-        WHERE nim_start_up='$id' AND nim_biodata='$id' AND nim_solusi='$id' AND nim_pp='$id' AND nim_plan='$id'")->result();
+        WHERE nim_start_up='$id' AND nim_biodata='$id' AND nim_solusi='$id' AND nim_pp='$id' AND nim_plan='$id'")->result();*/
 
-        $this->load->view('mahasiswa/proposal_pdf', $cetakp);
+        $this->load->view('mahasiswa/proposal_pdf', $data);
 
         
         $paper_size ='A4';

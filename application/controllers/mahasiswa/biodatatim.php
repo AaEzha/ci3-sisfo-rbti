@@ -12,10 +12,11 @@ class Biodatatim extends CI_Controller {
         }
     }
 
-    public function index(){
+    public function index($id_proposal){
         $data['title'] = "Biodata Tim";
-        $id= $this->session->userdata('uname_user');
-        $data['biodatatim'] = $this->db->query("SELECT * FROM tb_biodatatim WHERE nim_biodata='$id'")->result();
+        //$id= $this->session->userdata('uname_user');
+        $this->session->set_userdata('id_proposal', $id_proposal);
+        $data['biodatatim'] = $this->db->query("SELECT * FROM tb_biodatatim WHERE  id_proposal='$id_proposal'")->result();
 
 
 
@@ -24,17 +25,6 @@ class Biodatatim extends CI_Controller {
         $this->load->view('templates_mahasiswa/footer');
     }
 
-    public function indexHustler(){
-        $data['title'] = "Biodata Tim - Hustler";
-        $id= $this->session->userdata('uname_user');
-        $data['biodatatim'] = $this->db->query("SELECT * FROM tb_biodatatim WHERE nim_biodata='$id'")->result();
-
-
-
-        $this->load->view('templates_mahasiswa/header_proposal');
-        $this->load->view('mahasiswa/hustler', $data);
-        $this->load->view('templates_mahasiswa/footer');
-    }
 
     public function input()
     {
@@ -42,6 +32,7 @@ class Biodatatim extends CI_Controller {
         
         $data=array(
             'id_biodatatim'     =>set_value('id_biodatatim'),
+            'id_proposal'     =>set_value('id_proposal'),
             'nim_biodata'      =>set_value('nim_biodata'),
             'nama_hustler'     =>set_value('nama_hustler' ),
             'alamat_hustler'   =>set_value('alamat_hustler'),
@@ -75,7 +66,7 @@ class Biodatatim extends CI_Controller {
             $this->input();
             
         }else{
-            
+                $id_proposal      = $this->session->id_proposal;
                 $nim_biodata     = $this->session->uname_user;
                 $nama_hustler    = strtoupper($this->input->post('nama_hustler'));
                 $alamat_hustler  =$this->input->post('alamat_hustler');
@@ -100,6 +91,7 @@ class Biodatatim extends CI_Controller {
                 $data=array(
 
 
+                'id_proposal'      =>$id_proposal,
                 'nim_biodata'       =>$nim_biodata,
                 'nama_hustler'      =>$nama_hustler,
                 'alamat_hustler'    =>$alamat_hustler,
@@ -126,7 +118,7 @@ class Biodatatim extends CI_Controller {
             $this->session->set_flashdata('pesan','<div class="alert alert-success alert-dismissible fade show" role="alert">
             Data Biodata Tim Berhasil Ditambahkan! <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span></button></div>');
-            redirect('mahasiswa/biodatatim');
+            redirect("mahasiswa/biodatatim/index/$id_proposal");
 
         }
     }
@@ -163,6 +155,7 @@ class Biodatatim extends CI_Controller {
 
     public function update_aksi(){
         $this->_rules();
+        $id_proposal      = $this->session->id_proposal;
         $id_biodatatim   =$this->input->post('id_biodatatim');
         $nim_biodata     = $this->session->uname_user;
         $nama_hustler    = strtoupper($this->input->post('nama_hustler'));
@@ -204,6 +197,7 @@ class Biodatatim extends CI_Controller {
         );
 
         $where=array(
+            'id_proposal'=>$id_proposal,
             'id_biodatatim'=>$id_biodatatim
         );
         
@@ -212,18 +206,19 @@ class Biodatatim extends CI_Controller {
         $this->session->set_flashdata('pesan','<div class="alert alert-success alert-dismissible fade show" role="alert">
         Data Biodata Tim Berhasil Diupdate! <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span></button></div>');
-        redirect('mahasiswa/biodatatim');
+        redirect("mahasiswa/biodatatim/index/$id_proposal");
 
     }
 
     public function delete($id_biodatatim){
         $where = array('id_biodatatim'=>$id_biodatatim);
+        $id_proposal      = $this->session->id_proposal;
         $this->load->model('Biodatatim_model');
         $this->Biodatatim_model->hapus_data($where,'tb_biodatatim');
         $this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert">
         Data Biodata Tim Berhasil Dihapus! <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span></button></div>');
-        redirect('mahasiswa/biodatatim');
+        redirect("mahasiswa/biodatatim/index/$id_proposal");
 
     }
 

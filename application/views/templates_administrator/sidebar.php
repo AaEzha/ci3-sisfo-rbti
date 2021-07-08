@@ -61,17 +61,22 @@
                 </div>
             </li>
 
+
+        
+
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                     aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-file-alt"></i>
-                    <span>Article</span>
+                    <span>Data</span>
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Daftar Artikel:</h6>
+                        <h6 class="collapse-header">Daftar Data Lainnya:</h6>
                         <a class="collapse-item" href="<?php echo base_url('administrator/artikel')?>">Daftar Artikel</a>
+                        <a class="collapse-item" href="<?php echo base_url('administrator/kelas')?>">Daftar Kelas</a>
+                        <a class="collapse-item" href="<?php echo base_url('administrator/temaproposal')?>">Daftar Tema Proposal</a>
                     </div>
                 </div>
             </li>

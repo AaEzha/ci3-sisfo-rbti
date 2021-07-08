@@ -31,6 +31,7 @@
                 <label><h4>TELP HUSTLER</h4></label>
                 <input type="number"  name="telp_hustler" placeholder="Masukkan Telp Hustler Perusahan Start-Up Anda" class="form-control">
                 <?php echo form_error('telp_hustler','<div class="text-danger small" ml-3>')?>
+                <h6>(Hanya angka)</h6>
             </div>
 
             <div class="form-group col-md-6 ">
@@ -66,6 +67,7 @@
                 <label><h4>TELP HIPSTER</h4></label>
                 <input type="number"  name="telp_hipster" placeholder="Masukkan Telp Hipster Perusahan Start-Up Anda" class="form-control">
                 <?php echo form_error('telp_hipster','<div class="text-danger small" ml-3>')?>
+                <h6>(Hanya angka)</h6>
             </div>
 
             <div class="form-group col-md-6 ">
@@ -101,6 +103,7 @@
                 <label><h4>TELP HACKER</h4></label>
                 <input type="number"  name="telp_hacker" placeholder="Masukkan Telp Hacker Perusahan Start-Up Anda" class="form-control">
                 <?php echo form_error('telp_hacker','<div class="text-danger small" ml-3>')?>
+                <h6>(Hanya angka)</h6>
             </div>
 
             <div class="form-group col-md-6 ">

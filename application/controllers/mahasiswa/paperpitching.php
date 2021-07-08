@@ -13,14 +13,17 @@ class Paperpitching extends CI_Controller {
     }
 
 
-    public function index(){
+    public function index($id_proposal){
         $data['title'] = "Paper Pitching";
-        $id= $this->session->userdata('uname_user');
-        $data['paperpitching'] = $this->db->query("SELECT * FROM tb_paper_pitching WHERE nim_pp='$id'")->result();
+        //$id= $this->session->userdata('uname_user');
+        $this->session->set_userdata('id_proposal', $id_proposal);
+        $data['paperpitching'] = $this->db->query("SELECT * FROM tb_paper_pitching WHERE id_proposal='$id_proposal'")->result();
 
         $this->load->view('templates_mahasiswa/header_proposal');
         $this->load->view('mahasiswa/paperpitching',$data);
         $this->load->view('templates_mahasiswa/footer');
+
+       
     }
 
     public function input()
@@ -29,6 +32,7 @@ class Paperpitching extends CI_Controller {
         
         $data=array(
             'id_pp'                 =>set_value('id_pp'),
+            'id_proposal'           =>set_value('id_proposal'),
             'nim_pp'                =>set_value('nim_pp'),
             'latar_belakang_pp'     =>set_value('latar_belakang_pp'),
             'solusi_pp'             =>set_value('solusi_pp'),
@@ -47,7 +51,8 @@ class Paperpitching extends CI_Controller {
         $this->load->view('templates_mahasiswa/header_proposal');
         $this->load->view('mahasiswa/paperpitching_form', $data );
         $this->load->view('templates_mahasiswa/footer');
-        
+
+       
     }
 
     public function input_aksi(){
@@ -58,10 +63,10 @@ class Paperpitching extends CI_Controller {
             $this->input();
             
         }else{
-            
+                $id_proposal          = $this->session->id_proposal;
                 $nim_pp               = $this->session->uname_user;
                 $latar_belakang_pp    =$this->input->post('latar_belakang_pp');
-                $permasalahan_pp    =$this->input->post('permasalahan_pp');
+                $permasalahan_pp        =$this->input->post('permasalahan_pp');
                 $solusi_pp            =$this->input->post('solusi_pp');
                 $progres_pp           =$this->input->post('progres_pp');
                 $kompetitor_pp        =$this->input->post('kompetitor_pp');
@@ -69,23 +74,30 @@ class Paperpitching extends CI_Controller {
                 $target_pp            =$this->input->post('target_pp');
                 $data_pp              =$this->input->post('data_pp');
                 $proses_bisnis_pp     =$this->input->post('proses_bisnis_pp');
-                $proses_bisnis2_p    =$_FILES['proses_bisnis2_pp']['name'];
-                if($proses_bisnis2_pp=''){}else{
+                $proses_bisnis2_pp    =$_FILES['proses_bisnis2_pp']['name'];
+                if($proses_bisnis2_pp!=''){
                     $config['upload_path']      ='./assets/files';
                     $config['allowed_types']    ='jpg|jpeg|png|tiff';
                     $config['max_size']         = 2073; 
                     $this->load->library('upload',$config);
                     if(!$this->upload->do_upload('proses_bisnis2_pp')){
-                        echo "photo gagal diupload!";
-                    }else{
+                         // echo "photo gagal diupload!";
+                         $this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                         Photo Gagal Di Upload! <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                         <span aria-hidden="true">&times;</span></button></div>');
+                         redirect('mahasiswa/paperpitching', $id_proposal);
+                     }else{
                         $proses_bisnis2_pp=$this->upload->data('file_name');
                     }}
                 $tahapan_pp           =$this->input->post('tahapan_pp');
                 $kelebihan_pp         =$this->input->post('kelebihan_pp');
+
+
             
                 $data=array(
 
 
+                'id_proposal'      =>$id_proposal,
                 'nim_pp'                =>$nim_pp,
                 'latar_belakang_pp'     =>$latar_belakang_pp,
                 'permasalahan_pp'     =>$permasalahan_pp,
@@ -112,7 +124,7 @@ class Paperpitching extends CI_Controller {
             $this->session->set_flashdata('pesan','<div class="alert alert-success alert-dismissible fade show" role="alert">
             Data Paper Pitching Berhasil Ditambahkan! <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span></button></div>');
-            redirect('mahasiswa/paperpitching');
+            redirect("mahasiswa/paperpitching/index/$id_proposal");
 
         }
     }

@@ -11,13 +11,28 @@ class  Startup extends CI_Controller{
             redirect('welcome');
         }
     }
-
+ 
     public function index(){
         $data['admstartup'] = $this->db->query("SELECT * FROM tb_start_up ")->result();
         $this->load->view('templates_administrator/header');
         $this->load->view('templates_administrator/sidebar');
         $this->load->view('administrator/startup',$data);
         $this->load->view('templates_administrator/footer');
+    }
+
+    public function detail($id_proposal){ 
+        $data['title'] = "Startup";
+        // $id= $this->session->userdata('uname_user');
+        $this->session->set_userdata('id_proposal', $id_proposal);
+        $data['admstartupdetail'] = $this->db->query("SELECT * FROM tb_start_up WHERE id_proposal='$id_proposal'")->result();
+
+
+        $this->load->view('templates_administrator/header');
+        $this->load->view('templates_administrator/sidebar');
+        $this->load->view('administrator/startup_detail', $data);
+        $this->load->view('templates_administrator/footer');
+       
+        
     }
 
    

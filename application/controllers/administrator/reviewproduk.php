@@ -20,6 +20,19 @@ class  Reviewproduk extends CI_Controller{
         $this->load->view('templates_administrator/footer');
     }
 
+    public function detail($id_proposal){
+        $data['title'] = "Reviewproduk";
+        //$id= $this->session->userdata('uname_user');
+        $this->session->set_userdata('id_proposal', $id_proposal);
+        $data['admreviewdetail'] = $this->db->query("SELECT * FROM tb_solusi WHERE id_proposal='$id_proposal'")->result();
+
+
+        $this->load->view('templates_administrator/header');
+        $this->load->view('templates_administrator/sidebar');
+        $this->load->view('administrator/reviewproduk_detail',$data);
+        $this->load->view('templates_administrator/footer');
+    }
+
    
 
 }

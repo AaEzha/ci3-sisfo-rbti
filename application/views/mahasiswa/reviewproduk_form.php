@@ -16,7 +16,7 @@
                 <label><h4>NAMA APLIKASI</h4></label>
                 <input type="text"  name="nama_solusi" placeholder="Masukkan Nama Aplikasi Start-Up Anda" style="text-transform:uppercase" class="form-control">
                 <?php echo form_error('nama_solusi','<div class="text-danger small" ml-3>')?>
-            </div>
+            </div> 
 
             <div class="form-group col-md-6">
                 <label for="textarea"><h4>DESKRIPSI APLIKASI</h4></label>
@@ -31,6 +31,7 @@
                 <input type="file" name="logo_solusi" id="img" accept="image/*" class="custom-file-input">
                 <label class="custom-file-label" for="customFile">Pilih File Logo Aplikasi</label>
                 <?php echo form_error('logo_solusi','<div class="text-danger small" ml-10>')?>
+                <h6>(JPG/JPEG/TIFF/PNG Max 2 MB)</h6>
             </div>
             <div class="form-group col-md-6">
             <label><h4>PREVIEW UI/UX-1</h4></label>
@@ -39,6 +40,7 @@
                 <input type="file" name="prev_ui1_solusi"  id="img" accept="image/*"  class="custom-file-input">
                 <label class="custom-file-label" for="customFile">Pilih File Preview UI/UX - 1</label>
                 <?php echo form_error('prev_ui1_solusi','<div class="text-danger small" ml-3>')?>
+                <h6>(JPG/JPEG/TIFF/PNG Max 2 MB)</h6>
             </div>
             <div class="form-group col-md-6">
             <label><h4>PREVIEW UI/UX-2</h4></label>
@@ -47,6 +49,7 @@
                 <input type="file" name="prev_ui2_solusi"  id="img" accept="image/*"  class="custom-file-input">
                 <label class="custom-file-label" for="customFile">Pilih File Preview UI/UX - 2</label>
                 <?php echo form_error('prev_ui2_solusi','<div class="text-danger small" ml-3>')?>
+                <h6>(JPG/JPEG/TIFF/PNG Max 2 MB)</h6>
             </div>
             <div class="form-group col-md-6">
             <label><h4>PREVIEW UI/UX-3</h4></label>
@@ -55,6 +58,7 @@
                 <input type="file" name="prev_ui3_solusi"  id="img" accept="image/*"  class="custom-file-input">
                 <label class="custom-file-label" for="customFile">Pilih File Preview UI/UX - 3</label>
                 <?php echo form_error('prev_ui3_solusi','<div class="text-danger small" ml-3>')?>
+                <h6>(JPG/JPEG/TIFF/PNG Max 2 MB)</h6>
             </div>
             <div class="form-group col-md-6">
             <label><h4>PREVIEW UI/UX-4</h4></label>
@@ -63,11 +67,13 @@
                 <input type="file" name="prev_ui4_solusi"  id="img" accept="image/*"  class="custom-file-input">
                 <label class="custom-file-label" for="customFile">Pilih File Preview UI/UX - 4</label>
                 <?php echo form_error('prev_ui4_solusi','<div class="text-danger small" ml-3>')?>
+                <h6>(JPG/JPEG/TIFF/PNG Max 2 MB)</h6>
             </div>
             <div class="form-group col-md-6 ">
                 <label><h4>TAHUN PEMBUATAN</h4></label>
                 <input type="number" name="tahun_buat_solusi" placeholder="Masukkan Tahun Pembuatan Aplikasi Start-Up Anda" class="form-control">
                 <?php echo form_error('tahun_buat_solusi','<div class="text-danger small" ml-3>')?>
+                <h6>(Hanya angka)</h6>
             </div>
             <div class="form-group col-md-6 ">
                 <label><h4>LINK VIDEO APLIKASI</h4></label>

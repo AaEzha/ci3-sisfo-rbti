@@ -16,6 +16,7 @@ class DaftarMahasiswa extends CI_Controller {
         $data['title'] = "Daftar Mahasiswa";
         $id= $this->session->userdata('uname_user');
         $data['daftarmhs'] = $this->db->query("SELECT * FROM tb_mahasiswa WHERE dosen_mhs='$id' ORDER BY tb_mahasiswa.nim_mhs ASC")->result();
+        $this->load->view('templates_dosen/header_daftarmhs');
         $this->load->view('dosen/daftarmahasiswa', $data);
         $this->load->view('templates_dosen/footer');
     }

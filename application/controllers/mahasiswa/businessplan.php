@@ -10,13 +10,14 @@ class Businessplan extends CI_Controller {
             <span aria-hidden="true">&times;</span></button></div>');
             redirect('welcome');
         }
-    }
+    } 
 
 
-    public function index(){
+    public function index($id_proposal){
         $data['title'] = "Business Plan";
-        $id= $this->session->userdata('uname_user');
-        $data['businessplan'] = $this->db->query("SELECT * FROM tb_plan WHERE nim_plan='$id'")->result();
+        //$id= $this->session->userdata('uname_user');
+        $this->session->set_userdata('id_proposal', $id_proposal);
+        $data['businessplan'] = $this->db->query("SELECT * FROM tb_plan WHERE id_proposal='$id_proposal'")->result();
 
 
         $this->load->view('templates_mahasiswa/header_proposal');
@@ -31,6 +32,7 @@ class Businessplan extends CI_Controller {
         
         $data=array(
             'id_plan'     =>set_value('id_plan'),
+            'id_proposal'     =>set_value('id_proposal'),
             'nim_plan'     =>set_value('nim_plan'),
             'cust_plan'    =>set_value('cust_plan'),
             'value_plan'    =>set_value('value_plan'),
@@ -58,7 +60,7 @@ class Businessplan extends CI_Controller {
             $this->input();
             
         }else{
-            
+                $id_proposal      = $this->session->id_proposal;
                 $nim_plan    = $this->session->uname_user;
                 $cust_plan    =$this->input->post('cust_plan');
                 $value_plan    =$this->input->post('value_plan');
@@ -75,7 +77,7 @@ class Businessplan extends CI_Controller {
             
                 $data=array(
 
-
+                'id_proposal'      =>$id_proposal,
                 'nim_plan'     =>$nim_plan,
                 'cust_plan'    =>$cust_plan,
                 'value_plan'    =>$value_plan,
@@ -95,7 +97,7 @@ class Businessplan extends CI_Controller {
             $this->session->set_flashdata('pesan','<div class="alert alert-success alert-dismissible fade show" role="alert">
             Data Business Plan Berhasil Ditambahkan! <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span></button></div>');
-            redirect('mahasiswa/businessplan');
+            redirect("mahasiswa/businessplan/index/$id_proposal");
 
         }
     }
@@ -125,6 +127,7 @@ class Businessplan extends CI_Controller {
     }
 
     public function update_aksi(){
+        $id_proposal      = $this->session->id_proposal;
         $id_plan    =$this->input->post('id_plan');
         $nim_plan    = $this->session->uname_user;
         $cust_plan    =$this->input->post('cust_plan');
@@ -151,7 +154,9 @@ class Businessplan extends CI_Controller {
         );
 
         $where=array(
+            'id_proposal'=>$id_proposal,
             'id_plan'=>$id_plan,
+            
         );
         
         $this->load->model('Businessplan_model');
@@ -159,18 +164,19 @@ class Businessplan extends CI_Controller {
         $this->session->set_flashdata('pesan','<div class="alert alert-success alert-dismissible fade show" role="alert">
         Data Business Plan Berhasil Diupdate! <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span></button></div>');
-        redirect('mahasiswa/businessplan');
+        redirect("mahasiswa/businessplan/index/$id_proposal");
 
     }
 
     public function delete($id_plan){
         $where = array('id_plan'=>$id_plan);
+        $id_proposal      = $this->session->id_proposal;
         $this->load->model('Businessplan_model');
         $this->Businessplan_model->hapus_data($where,'tb_plan');
         $this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert">
         Data Business Plan Berhasil Dihapus! <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span></button></div>');
-        redirect('mahasiswa/businessplan');
+        redirect("mahasiswa/businessplan/index/$id_proposal");
 
     }
 

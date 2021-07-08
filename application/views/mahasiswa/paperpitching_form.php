@@ -71,6 +71,7 @@
                 <input type="file" name="proses_bisnis2_pp"  id="img" accept="image/*" placeholder="Masukkan Nama Dosen" class="custom-file-input">
                 <label class="custom-file-label" for="customFile">Pilih File Proses Bisnis</label>
                 <?php echo form_error('proses_bisnis2_pp','<div class="text-danger small" ml-3>')?>
+                <h6>(JPG/JPEG/TIFF/PNG Max 2 MB)</h6>
             </div>
 
             <div class="form-group col-md-6">
