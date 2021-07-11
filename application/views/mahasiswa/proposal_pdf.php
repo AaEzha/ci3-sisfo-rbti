@@ -8,6 +8,9 @@
 
     @page{margin: 0.2in 0.5in 0.2in 0.5in;}
     
+	img {
+		width: 270px;
+	}
 </style>
 <center>
 <h1>PROPOSAL</h1>
@@ -22,8 +25,8 @@
 <h3>Nama Start Up</h3><p class="text_content"><?php echo strtoupper ($c->nama_start_up); ?></p>
 <h3>Visi Start Up</h3><p class="text_content"><?php echo $c->visi_start_up ?></p>
 <h3>Misi Start Up</h3><p class="text_content"><?php echo $c->misi_start_up ?></p>
-<h3>Struktur Start Up</h3><img src="<?php echo base_url().'assets/files/'.$c->struktur_start_up?>">
-<h3>Logo Start Up</h3><img src="<?php echo base_url().'assets/files/'.$c->logo_start_up?>">
+<h3>Struktur Start Up</h3><img src="<?php echo './assets/files/'.$c->struktur_start_up?>">
+<h3>Logo Start Up</h3><img src="<?php echo './assets/files/'.$c->logo_start_up?>">
 <h3>Tagline Start Up</h3><p class="text_content"><?php echo strtoupper ($c->tagline_start_up) ?></p>
 <br>
 <br>
@@ -58,11 +61,12 @@
 <h2>C. REVIEW PRODUK</h2>
 <h3>Nama Aplikasi</h3><p class="text_content"><?php echo strtoupper ($c->nama_solusi); ?>>/p>
 <h3>Deskripsi Aplikasi</h3><p class="text_content"><?php echo $c->deskripsi_solusi ?></p>
-<h3>Logo Aplikasi</h3><img src="<?php echo base_url().'assets/files/'.$c->logo_solusi?>">
-<h3>Preview UI/UX-1</h3><img src="<?php echo base_url().'assets/files/'.$c->prev_ui1_solusi?>">
-<h3>Preview UI/UX-2</h3><img src="<?php echo base_url().'assets/files/'.$c->prev_ui2_solusi?>">
-<h3>Preview UI/UX-3</h3><img src="<?php echo base_url().'assets/files/'.$c->prev_ui3_solusi?>">
-<h3>Preview UI/UX-4</h3><img src="<?php echo base_url().'assets/files/'.$c->prev_ui4_solusi?>">
+<h3>Deskripsi Aplikasi</h3><p class="text_content"><?php echo './assets/files/'.$c->logo_solusi?></p>
+<h3>Logo Aplikasi</h3><img src="<?php echo './assets/files/'.$c->logo_solusi?>">
+<h3>Preview UI/UX-1</h3><img src="<?php echo './assets/files/'.$c->prev_ui1_solusi?>">
+<h3>Preview UI/UX-2</h3><img src="<?php echo './assets/files/'.$c->prev_ui2_solusi?>">
+<h3>Preview UI/UX-3</h3><img src="<?php echo './assets/files/'.$c->prev_ui3_solusi?>">
+<h3>Preview UI/UX-4</h3><img src="<?php echo './assets/files/'.$c->prev_ui4_solusi?>">
 <h3>Tahun Pembuatan</h3><p class="text_content"><?php echo $c->tahun_buat_solusi ?></p>
 <h3>Link Video Aplikasi</h3><p class="text_content"><?php echo $c->link_vid_solusi ?></p>
 <h3>Link Product Aplikasi</h3><p class="text_content"><?php echo $c->link_prod_solusi ?></p>
@@ -81,7 +85,7 @@
 <h3>Siapa target oengguna solusi anda?</h3><p class="text_content"><?php echo $c->target_pp ?></p>
 <h3>Data apa yang anda gunakan sehingga anda bisa menuliskan target pengguna dari solusi anda?</h3><p class="text_content"><?php echo $c->data_pp ?></p>
 <h3>Bagaimana Proses Bisnis dari aplikasi/solusi yang dibuat? Boleh dengan gambar</h3><p class="text_content"><?php echo $c->proses_bisnis_pp ?></p>
-                        <img src="<?php echo base_url().'assets/files/'.$c->proses_bisnis2_pp?>">
+                        <img src="<?php echo './assets/files/'.$c->proses_bisnis2_pp?>">
 <h3>Bagaimana proses/tahapan mewujudkan solusi yang akan anda buat?</h3><p class="text_content"><?php echo $c->tahapan_pp ?></p>
 <h3>Kelebihan dari solusi/aplikasi yang ditawarkan daripada competitor (jika ada)</h3><p class="text_content"><?php echo $c->kelebihan_pp ?></p>
 <br>

@@ -18,7 +18,7 @@ class Startup extends CI_Controller {
         // $id= $this->session->userdata('uname_user');
         $this->session->set_userdata('id_proposal', $id_proposal);
         $data['startup'] = $this->db->query("SELECT * FROM tb_start_up WHERE id_proposal='$id_proposal'")->result();
-
+        // echo($this->session->id_proposal);
         $this->load->view('templates_mahasiswa/header_proposal');
         $this->load->view("mahasiswa/startup",$data);
         $this->load->view('templates_mahasiswa/footer');
@@ -28,6 +28,7 @@ class Startup extends CI_Controller {
     public function input()
     {
         $this->load->library('session');
+        // echo($this->session->id_proposal);
         
         $data=array(
             'id_start_up'     =>set_value('id_start_up'),
@@ -49,11 +50,11 @@ class Startup extends CI_Controller {
 
     public function input_aksi(){
         $this->_rules();
-                                
-       
+        
+        
         if($this->form_validation->run()==FALSE){
             $this->input();
-            
+             
         }else{
                 $id_proposal      = $this->session->id_proposal;
                 $nim_start_up     = $this->session->uname_user;
@@ -67,11 +68,12 @@ class Startup extends CI_Controller {
                     $config['max_size']         = 2073; 
                     $this->load->library('upload',$config);
                     if(!$this->upload->do_upload('struktur_start_up')){
+                        echo($this->upload->display_errors());
                         // echo "photo gagal diupload!";
                         $this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert">
                         Photo Gagal Di Upload! <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span></button></div>');
-                        redirect('mahasiswa/startup', $id_proposal);
+                        redirect('mahasiswa/startup/input/'.$id_proposal);
                     }else{
                         $struktur_start_up=$this->upload->data('file_name');
                     }
@@ -84,11 +86,12 @@ class Startup extends CI_Controller {
                     $config['max_size']         = 2073; 
                     $this->load->library('upload',$config);
                     if(!$this->upload->do_upload('logo_start_up')){
+                        echo($this->upload->display_errors());
                         // echo "photo gagal diupload!";
                         $this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert">
                         Photo Gagal Di Upload! <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span></button></div>');
-                        redirect('mahasiswa/startup', $id_proposal);
+                        redirect('mahasiswa/startup/input/'. $id_proposal);
                     }else{
                         $logo_start_up=$this->upload->data('file_name');
                     }
@@ -109,7 +112,7 @@ class Startup extends CI_Controller {
                 'logo_start_up'    =>$logo_start_up,
                 'tagline_start_up' =>$tagline_start_up,
 
-            );
+                );
 
             
             $this->load->model('Startup_model');
@@ -117,7 +120,7 @@ class Startup extends CI_Controller {
             $this->session->set_flashdata('pesan','<div class="alert alert-success alert-dismissible fade show" role="alert">
             Data Startup Berhasil Ditambahkan! <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span></button></div>');
-            redirect("mahasiswa/startup/index/$id_proposal");
+            redirect("mahasiswa/startup/index/", $id_proposal);
 
         }
     }

@@ -19,19 +19,20 @@
     }
 
       
-      
+       
           public function input_data(){
             $data = [
               'id_proposal' => $this->input->post('id_proposal'),
               'nim_mhs' => $this->session->uname_user,
-              'judul_proposal' => $this->input->post('judul_proposal'),
+              'judul_proposal' => strtoupper($this->input->post('judul_proposal')),
+              'tema_proposal' => $this->input->post('tema_proposal')
               
-             
+              
   
           ];
           $this->db->insert('tb_master_proposal', $data);
           }
-
+ 
           
           
           public function getTema(){

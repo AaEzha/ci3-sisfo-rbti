@@ -32,7 +32,7 @@
                         <td><?php echo $no++ ?></td>
                         <td><?php echo $dp->nim_mhs ?></td>
                         <td><?php echo $dp->judul_proposal ?></td>
-                        <td></td>
+                        <td><?php echo $dp->tema_proposal ?></td>
                         <td width="10px"><?php echo anchor('dosen/daftarproposal/detail1/'.$dp->id_proposal,'<div class="btn btn=sm btn-primary">
                            <i class="fa fa-eye"></i></div>') ?></td>
                         <td width="10px"><?php echo anchor('dosen/daftarproposal/detail2/'.$dp->id_proposal,'<div class="btn btn=sm btn-primary">

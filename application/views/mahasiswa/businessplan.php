@@ -23,7 +23,8 @@
                            <td><?php echo $bp->cust_plan ?></td>
                            <td width="10px"><?php echo anchor('mahasiswa/businessplan/update/'.$bp->id_plan,'<div class="btn btn=sm btn-primary">
                            <i class="fa fa-edit"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('mahasiswa/businessplan/status/'.$bp->id_plan,'<div class="btn btn=sm btn-success">
+                           <td>Status : <p><?php echo $bp->status_cust_plan ?></p></td>
+                           <td width="10px"><?php echo anchor('mahasiswa/businessplan/catatan/'.$bp->id_plan,'<div class="btn btn=sm btn-success">
                            <i class="fa fa-info"></i></div>')?></td>
                      
 
@@ -33,7 +34,8 @@
                            <td><?php echo $bp->value_plan ?></td>
                            <td width="10px"><?php echo anchor('mahasiswa/businessplan/update/'.$bp->id_plan,'<div class="btn btn=sm btn-primary">
                            <i class="fa fa-edit"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('mahasiswa/businessplan/status/'.$bp->id_plan,'<div class="btn btn=sm btn-success">
+                           <td>Status : <p><?php echo $bp->status_value_plan ?></p></td>
+                           <td width="10px"><?php echo anchor('mahasiswa/businessplan/catatan/'.$bp->id_plan,'<div class="btn btn=sm btn-success">
                            <i class="fa fa-info"></i></div>')?></td>
                      
 
@@ -43,7 +45,8 @@
                            <td><?php echo $bp->channels_plan ?></td>
                            <td width="10px"><?php echo anchor('mahasiswa/businessplan/update/'.$bp->id_plan,'<div class="btn btn=sm btn-primary">
                            <i class="fa fa-edit"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('mahasiswa/businessplan/status/'.$bp->id_plan,'<div class="btn btn=sm btn-success">
+                           <td>Status : <p><?php echo $bp->status_channels_plan ?></p></td>
+                           <td width="10px"><?php echo anchor('mahasiswa/businessplan/catatan/'.$bp->id_plan,'<div class="btn btn=sm btn-success">
                            <i class="fa fa-info"></i></div>')?></td>
                      
 
@@ -53,7 +56,8 @@
                            <td><?php echo $bp->relation_plan ?></td>
                            <td width="10px"><?php echo anchor('mahasiswa/businessplan/update/'.$bp->id_plan,'<div class="btn btn=sm btn-primary">
                            <i class="fa fa-edit"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('mahasiswa/businessplan/status/'.$bp->id_plan,'<div class="btn btn=sm btn-success">
+                           <td>Status : <p><?php echo $bp->status_relation_plan ?></p></td>
+                           <td width="10px"><?php echo anchor('mahasiswa/businessplan/catatan/'.$bp->id_plan,'<div class="btn btn=sm btn-success">
                            <i class="fa fa-info"></i></div>')?></td>
                      
 
@@ -63,7 +67,8 @@
                            <td><?php echo $bp->key_act_plan ?></td>
                            <td width="10px"><?php echo anchor('mahasiswa/businessplan/update/'.$bp->id_plan,'<div class="btn btn=sm btn-primary">
                            <i class="fa fa-edit"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('mahasiswa/businessplan/status/'.$bp->id_plan,'<div class="btn btn=sm btn-success">
+                           <td>Status : <p><?php echo $bp->status_keyact_plan ?></p></td>
+                           <td width="10px"><?php echo anchor('mahasiswa/businessplan/catatan/'.$bp->id_plan,'<div class="btn btn=sm btn-success">
                            <i class="fa fa-info"></i></div>')?></td>
                      
 
@@ -73,7 +78,8 @@
                            <td><?php echo $bp->key_res_plan ?></td>
                            <td width="10px"><?php echo anchor('mahasiswa/businessplan/update/'.$bp->id_plan,'<div class="btn btn=sm btn-primary">
                            <i class="fa fa-edit"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('mahasiswa/businessplan/status/'.$bp->id_plan,'<div class="btn btn=sm btn-success">
+                           <td>Status : <p><?php echo $bp->status_keyres_plan ?></p></td>
+                           <td width="10px"><?php echo anchor('mahasiswa/businessplan/catatan/'.$bp->id_plan,'<div class="btn btn=sm btn-success">
                            <i class="fa fa-info"></i></div>')?></td>
                      
 
@@ -83,9 +89,9 @@
                            <td><?php echo $bp->key_partner_plan ?></td>
                            <td width="10px"><?php echo anchor('mahasiswa/businessplan/update/'.$bp->id_plan,'<div class="btn btn=sm btn-primary">
                            <i class="fa fa-edit"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('mahasiswa/businessplan/status/'.$bp->id_plan,'<div class="btn btn=sm btn-success">
+                           <td>Status : <p><?php echo $bp->status_keypart_plan ?></p></td>
+                           <td width="10px"><?php echo anchor('mahasiswa/businessplan/catatan/'.$bp->id_plan,'<div class="btn btn=sm btn-success">
                            <i class="fa fa-info"></i></div>')?></td>
-                     
 
                            </tr>
                      <tr>
@@ -93,7 +99,8 @@
                            <td><?php echo $bp->cost_plan ?></td>
                            <td width="10px"><?php echo anchor('mahasiswa/businessplan/update/'.$bp->id_plan,'<div class="btn btn=sm btn-primary">
                            <i class="fa fa-edit"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('mahasiswa/businessplan/status/'.$bp->id_plan,'<div class="btn btn=sm btn-success">
+                           <td>Status : <p><?php echo $bp->status_cost_plan ?></p></td>
+                           <td width="10px"><?php echo anchor('mahasiswa/businessplan/catatan/'.$bp->id_plan,'<div class="btn btn=sm btn-success">
                            <i class="fa fa-info"></i></div>')?></td>
                      
 
@@ -103,7 +110,8 @@
                            <td><?php echo $bp->revenue_plan ?></td>
                            <td width="10px"><?php echo anchor('mahasiswa/businessplan/update/'.$bp->id_plan,'<div class="btn btn=sm btn-primary">
                            <i class="fa fa-edit"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('mahasiswa/businessplan/status/'.$bp->id_plan,'<div class="btn btn=sm btn-success">
+                           <td>Status : <p><?php echo $bp->status_revenue_plan ?></p></td>
+                           <td width="10px"><?php echo anchor('mahasiswa/businessplan/catatan/'.$bp->id_plan,'<div class="btn btn=sm btn-success">
                            <i class="fa fa-info"></i></div>')?></td>
                      
                      </tr>

@@ -6,7 +6,7 @@
 
     <?php echo $this->session->flashdata('pesan')?>
 
-    <?php echo anchor('administrator/dosen/input','<button class="btn btn-sm btn-primary mb-3"> 
+    <?php echo anchor('administrator/dosen/input_data/','<button class="btn btn-sm btn-primary mb-3"> 
     <i class="fas fa-plus fa-sm"></i> Tambah Dosen </button> ')?>
 
 
@@ -14,7 +14,6 @@
         <tr>
             <th>NO</th>
             <th>USERNAME</th>
-            <th>PASSWORD</th>
             <th>NAMA</th>
             <th colspan="2">AKSI</th>
         </tr>
@@ -25,7 +24,6 @@
         <tr>
             <td width="20px"><?php echo $no++ ?></td>
             <td><?php echo $dsn->uname_dosen?></td>
-            <td><?php echo $dsn->pass_dosen?></td>
             <td><?php echo $dsn->nama_dosen?></td>
             <td width="20px"><?php echo anchor('administrator/dosen/update/'.$dsn->id_dosen,'<div class="btn btn=sm btn-primary">
             <i class="fa fa-edit"></i></div>') ?></td>

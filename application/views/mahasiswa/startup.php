@@ -23,7 +23,8 @@
                            <td><?php echo strtoupper ($su->nama_start_up); ?></td>
                            <td width="10px"><?php echo anchor('mahasiswa/startup/update/'.$su->id_start_up,'<div class="btn btn=sm btn-primary">
                            <i class="fa fa-edit"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('mahasiswa/startup/status/'.$su->id_start_up,'<div class="btn btn=sm btn-success">
+                           <td>Status : <p><?php echo ($su->status_nama_su); ?></p></td>
+                           <td width="10px"><?php echo anchor('mahasiswa/startup/catatan/'.$su->id_start_up,'<div class="btn btn=sm btn-success">
                            <i class="fa fa-comment"></i></div>')?></td>
                      
                      </tr>
@@ -32,7 +33,8 @@
                            <td><?php echo $su->visi_start_up ?></td>
                            <td width="10px"><?php echo anchor('mahasiswa/startup/update/'.$su->id_start_up,'<div class="btn btn=sm btn-primary">
                            <i class="fa fa-edit"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('mahasiswa/startup/status/'.$su->id_start_up,'<div class="btn btn=sm btn-success">
+                           <td>Status : <p><?php echo ($su->status_visi_su); ?></p></td>
+                           <td width="10px"><?php echo anchor('mahasiswa/startup/catatan/'.$su->id_start_up,'<div class="btn btn=sm btn-success">
                            <i class="fa fa-comment"></i></div>')?></td>
                      
                      </tr>
@@ -41,7 +43,8 @@
                            <td><?php echo $su->misi_start_up ?></td>
                            <td width="10px"><?php echo anchor('mahasiswa/startup/update/'.$su->id_start_up,'<div class="btn btn=sm btn-primary">
                            <i class="fa fa-edit"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('mahasiswa/startup/status/'.$su->id_start_up,'<div class="btn btn=sm btn-success">
+                           <td>Status : <p><?php echo ($su->status_misi_su); ?></p></td>
+                           <td width="10px"><?php echo anchor('mahasiswa/startup/catatan/'.$su->id_start_up,'<div class="btn btn=sm btn-success">
                            <i class="fa fa-comment"></i></div>')?></td>
                      
                      </tr>
@@ -50,7 +53,8 @@
                            <td><img src="<?php echo base_url().'assets/files/'.$su->struktur_start_up?>" style="width:20%;"></td>
                            <td width="10px"><?php echo anchor('mahasiswa/startup/update/'.$su->id_start_up,'<div class="btn btn=sm btn-primary">
                            <i class="fa fa-edit"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('mahasiswa/startup/status/'.$su->id_start_up,'<div class="btn btn=sm btn-success">
+                           <td>Status : <p><?php echo ($su->status_struktur_su); ?></p></td>
+                           <td width="10px"><?php echo anchor('mahasiswa/startup/catatan/'.$su->id_start_up,'<div class="btn btn=sm btn-success">
                            <i class="fa fa-comment"></i></div>')?></td>
                      
                      </tr>
@@ -59,7 +63,8 @@
                            <td><img src="<?php echo base_url().'assets/files/'.$su->logo_start_up?>" style="width:20%;"></td>
                            <td width="10px"><?php echo anchor('mahasiswa/startup/update/'.$su->id_start_up,'<div class="btn btn=sm btn-primary">
                            <i class="fa fa-edit"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('mahasiswa/startup/status/'.$su->id_start_up,'<div class="btn btn=sm btn-success">
+                           <td>Status : <p><?php echo ($su->status_logo_su); ?></p></td>
+                           <td width="10px"><?php echo anchor('mahasiswa/startup/catatan/'.$su->id_start_up,'<div class="btn btn=sm btn-success">
                            <i class="fa fa-comment"></i></div>')?></td>
                      
                      </tr>
@@ -68,7 +73,8 @@
                            <td><?php echo strtoupper ($su->tagline_start_up) ?></td>
                            <td width="10px"><?php echo anchor('mahasiswa/startup/update/'.$su->id_start_up,'<div class="btn btn=sm btn-primary">
                            <i class="fa fa-edit"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('mahasiswa/startup/status/'.$su->id_start_up,'<div class="btn btn=sm btn-success">
+                           <td>Status : <p><?php echo ($su->status_tagline_su); ?></p></td>
+                           <td width="10px"><?php echo anchor('mahasiswa/startup/catatan/'.$su->id_start_up,'<div class="btn btn=sm btn-success">
                            <i class="fa fa-comment"></i></div>')?></td>
                      
                      </tr>

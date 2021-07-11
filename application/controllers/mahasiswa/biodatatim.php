@@ -18,12 +18,14 @@ class Biodatatim extends CI_Controller {
         $this->session->set_userdata('id_proposal', $id_proposal);
         $data['biodatatim'] = $this->db->query("SELECT * FROM tb_biodatatim WHERE  id_proposal='$id_proposal'")->result();
 
-
+ 
 
         $this->load->view('templates_mahasiswa/header_proposal');
         $this->load->view('mahasiswa/biodatatim', $data);
         $this->load->view('templates_mahasiswa/footer');
     }
+
+   
 
 
     public function input()

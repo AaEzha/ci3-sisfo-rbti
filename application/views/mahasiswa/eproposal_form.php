@@ -21,7 +21,7 @@
             <div class="form-group col-md-6 ">
                 <label><h4>TEMA PROPOSAL</h4></label>
                 <br>
-                <select name="tema">
+                <select name="tema_proposal">
                 <option disabled selected>---Pilih Tema Proposal---</option>
                 <?php foreach ($tema as $row) : ?>
                 <option value="<?= $row['tema_proposal'];?>"><?= $row['tema_proposal'];?></option>

@@ -6,7 +6,7 @@
 
     <?php echo $this->session->flashdata('pesan')?>
 
-    <?php echo anchor('administrator/mahasiswa/input','<button class="btn btn-sm btn-primary mb-3"> 
+    <?php echo anchor('administrator/mahasiswa/input_data/','<button class="btn btn-sm btn-primary mb-3"> 
     <i class="fas fa-plus fa-sm"></i> Tambah Mahasiswa </button> ')?>
 
 
@@ -14,7 +14,6 @@
         <tr>
             <th>NO</th>
             <th>NIM</th>
-            <th>PASSWORD</th>
             <th>NAMA</th>
             <th>KELAS</th>
             <th>DOSEN PENGAJAR</th>
@@ -27,7 +26,6 @@
         <tr>
             <td width="20px"><?php echo $no++ ?></td>
             <td><?php echo $mhs->nim_mhs?></td>
-            <td><?php echo $mhs->pass_mhs?></td>
             <td><?php echo $mhs->nama_mhs?></td>
             <td><?php echo $mhs->kelas_mhs?></td>
             <td><?php echo $mhs->dosen_mhs?></td>
