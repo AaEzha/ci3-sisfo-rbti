@@ -1,72 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-   <head>
-      <!-- basic -->
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <!-- mobile metas -->
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-      <!-- site metas -->
-      <title>E-Proposal RBTI</title>
-      <meta name="keywords" content="">
-      <meta name="description" content="">
-      <meta name="author" content="">
-      <!-- bootstrap css -->
-      <link rel="stylesheet" href="<?php echo base_url()?>assets/css/bootstrap.min.css">
-      <!-- style css -->
-      <link rel="stylesheet" href="<?php echo base_url()?>assets/css/style.css">
-      <!-- Responsive-->
-      <link rel="stylesheet" href="<?php echo base_url()?>assets/css/responsive.css">
-      <!-- fevicon -->
-      <link rel="icon" href="<?php echo base_url()?>assets/images/fevicon.png" type="image/gif" />
-      <!-- Scrollbar Custom CSS -->
-      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-       <link rel="stylesheet" href="<?php echo base_url()?>assets/css/owl.carousel.min.css"> 
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-      <link rel="stylesheet" href="https://rawgit.com/LeshikJanz/libraries/master/Bootstrap/baguetteBox.min.css">
-      <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
-   </head>
-   <!-- body -->
-   <body class="main-layout">
-      <!-- end loader -->
-      <!-- top -->
-                    <!-- header -->
-         <header class="header-area">
-            <div class="left">
-               <a href="Javascript:void(0)"><i class="fa fa-search" aria-hidden="true"></i></a>
-            </div>
-            <div class="right">
-            <a href="<?php echo base_url('welcome/logout')?>"><i class="fa fa-sign-out" aria-hidden="true"></i>logout</a>
-            </div>
-            <div class="container">
-               <div class="row d_flex">
-                  <div class="col-sm-3 logo_sm">
-                     <div class="logo">
-                        <a href="index.html"></a>
-                     </div>
-                  </div>
-                  <div class="col-lg-19 offset-lg-2 col-md-12 col-sm-9">
-                     <div class="navbar-area">
-                        <nav class="site-navbar">
-                           <ul>
-                              <li><a href="<?php echo base_url('/dosen/dashboard')?>">Home</a></li>
-                              <li><a href="<?php echo base_url('/dosen/daftarmahasiswa')?>">Daftar Mahasiswa</a></li>
-                              <li><a class="active" href="<?php echo base_url('/dosen/daftarproposal')?>">Daftar E-Proposal</a></li>
-                              <li><a href="doctores.html">Profil</a></li>
-                           </ul>
-                           <button class="nav-toggler">
-                           <span></span>
-                           </button>
-                        </nav>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </header> 
-      <!-- end header -->
+
    
 <!-- cases -->
 <div class="cases">
@@ -83,150 +15,201 @@
             <div class="row d_flex" >
                <div class=" col-md-12" >
                   <div class="latest text_align_center" >
-                  <table class="table table-bordered table-stripped table-hover" >
-                  <?php $no=1; foreach($detailpro3 as $d) :  ?>
+                <?php $no=1; foreach($detailpro3 as $rp) :  ?>
                     
-                    <tr>
-                    <th>3.1</th>
-                           <th>NAMA APLIKASI</th>
-                           <td><?php echo strtoupper ($d->nama_solusi); ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_solusi,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_solusi,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
-                     
-
-                     </tr>
-                     <tr>
-                     <th>3.2</th>
-                           <th>DESKRRIPSI APLIKASI</th>
-                           <td><?php echo $d->deskripsi_solusi ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_solusi,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_solusi,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
-                     
-
-                     </tr>
-                     <tr>   
-                     <th>3.3</th>   
-                           <th>LOGO APLIKASI</th>
-                           <td><img src="<?php echo base_url().'assets/files/'.$d->logo_solusi?>"></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_solusi,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_solusi,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
-                     
-                        
-
-                     </tr>
-                     <tr>
-                     <th>3.4</th>
-                           <th>PREVIEW UI/UX -1</th>
-                           <td><img src="<?php echo base_url().'assets/files/'.$d->prev_ui1_solusi?>"></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_solusi,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_solusi,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
-                     
-                        
-                        
-
-                     </tr>
-                     <tr>
-                     <th>3.5</th>
-                           <th>PREVIEW UI/UX -2</th>
-                           <td><img src="<?php echo base_url().'assets/files/'.$d->prev_ui2_solusi?>"></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_solusi,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_solusi,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
-                     
-                        
-
-                     </tr>
-                     <tr>
-                     <th>3.6</th>
-                           <th>PREVIEW UI/UX -3</th>
-                           <td><img src="<?php echo base_url().'assets/files/'.$d->prev_ui3_solusi?>"></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_solusi,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_solusi,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
-                     
-                        
-
-
-                     </tr>
-                     <tr>
-                     <th>3.7</th>
-                           <th>PREVIEW UI/UX -4</th>
-                           <td><img src="<?php echo base_url().'assets/files/'.$d->prev_ui4_solusi?>"></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_solusi,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_solusi,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
-                     
-                        
-                     </tr>
-                     <tr>
-                     <th>3.8</th>
-                           <th>TAHUN PEMBUATAN</th>
-                           <td><?php echo $d->tahun_buat_solusi ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_solusi,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_solusi,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
-                     
+                     <!-- nama aplikasi -->
+                  <div class="row">
+                        <div class="col-md-7 form-group mb-3">
+                        <label><h4>3.1 NAMA APLIKASI</h4></label>
+                        <input type="text" class="form-control" id="nama_solusi" name="nama_solusi" value="<?php echo strtoupper ($rp->nama_solusi); ?>" disabled> 
+                        </div>
                        
+                        <div class="col-md-2 form-group mb-3">
+                        <label><h6>STATUS</h6></label>
+                        <input type="text" class="form-control" id="status_nama_solusi" name="status_nama_solusi" value="<?php echo ($rp->status_nama_solusi); ?>" disabled> 
+                       </div>
+                       <div class="col-md-3 form-group mb-3">
+                       <label for="textarea"><h6>CATATAN</h6></label>
+                        <textarea type="text" rows="1" name="catnama_solusi" class="form-control" disabled> <?php echo $rp->catnama_solusi?></textarea>
+                        </div>
+                        </div>
 
-                     </tr>
-                     <tr>
-                     <th>3.9</th>
-                           <th>LINK VIDEO</th>
-                           <td><?php echo $d->link_vid_solusi ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_solusi,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_solusi,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
-                     
-                     
-                        
 
-                     </tr>
-                     <tr>
-                     <th>3.10</th>
-                           <th>LINK PRODUK</th>
-                           <td><?php echo $d->link_prod_solusi ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_solusi,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_solusi,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
-                     
-                     
-                        
-
-                     </tr>
-                     <tr>
-                     <th>3.11</th>
-                           <th>TEKNOLOGI YANG DIGUNAKAN</th>
-                           <td><?php echo $d->teknologi_solusi ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_solusi,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_solusi,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
-                     
-                    
+                         <!-- deskripsi aplikasi -->
+                        <div class="row">
+                        <div class="col-md-7 form-group mb-3">
+                        <label for="textarea"><h4>3.2 DESKRRIPSI APLIKASI</h4></label>
+                        <textarea id="content9" type="text" rows="7" name="deksripsi_solusi" class="form-control" disabled> <?php echo $rp->deskripsi_solusi ?></textarea>
+                        </div>
                        
+                        <div class="col-md-2 form-group mb-3">
+                        <label><h6>STATUS</h6></label>
+                        <input type="text" class="form-control" id="status_desk_solusi" name="status_desk_solusi" value="<?php echo ($rp->status_desk_solusi); ?>" disabled> 
+                       </div>
+                       <div class="col-md-3 form-group mb-3">
+                       <label for="textarea"><h6>CATATAN</h6></label>
+                        <textarea type="text" rows="7" name="catdesk_solusi" class="form-control" disabled> <?php echo $rp->catdesk_solusi?></textarea>
+                        </div>
+                        </div>
 
-                     </tr>
+                         <!-- logo aplikasi -->
+                         <div class="row">
+                        <div class="col-md-7 form-group mb-3">
+                        <label><h4>3.3 LOGO APLIKASI</h4></label>
+                        <br>
+                        <img src="<?php echo base_url().'assets/files/'.$rp->logo_solusi?>" class="img-thumbnail" width="450px"></div>
+                      
+                        <div class="col-md-2 form-group mb-3">
+                        <label><h6>STATUS</h6></label>
+                        <input type="text" class="form-control" id="status_logo_solusi" name="status_logo_solusi" value="<?php echo ($rp->status_logo_solusi); ?>" disabled> 
+                       </div>
+                       <div class="col-md-3 form-group mb-3">
+                       <label for="textarea"><h6>CATATAN</h6></label>
+                        <textarea type="text" rows="5" name="catlogo_solusi" class="form-control" disabled> <?php echo $rp->catlogo_solusi?></textarea>
+                        </div>
+                        </div>
 
+                        <!-- prev ui1 aplikasi -->
+                        <div class="row">
+                        <div class="col-md-7 form-group mb-3">
+                        <label><h4>3.4 PREVIEW UI/UX-1</h4></label>
+                        <br>
+                        <img src="<?php echo base_url().'assets/files/'.$rp->prev_ui1_solusi?>" class="img-thumbnail" width="450px"></div>
+                      
+                        <div class="col-md-2 form-group mb-3">
+                        <label><h6>STATUS</h6></label>
+                        <input type="text" class="form-control" id="status_ui1_solusi" name="status_ui1_solusi" value="<?php echo ($rp->status_ui1_solusi); ?>" disabled> 
+                       </div>
+                       <div class="col-md-3 form-group mb-3">
+                       <label for="textarea"><h6>CATATAN</h6></label>
+                        <textarea type="text" rows="5" name="catui1_solusi" class="form-control" disabled> <?php echo $rp->catui1_solusi?></textarea>
+                        </div>
+                        </div>
 
-                <?php endforeach; ?>
+                        <!-- prev ui2 aplikasi -->
+                        <div class="row">
+                        <div class="col-md-7 form-group mb-3">
+                        <label><h4>3.5 PREVIEW UI/UX-2</h4></label>
+                        <br>
+                        <img src="<?php echo base_url().'assets/files/'.$rp->prev_ui2_solusi?>" class="img-thumbnail" width="450px"></div>
+                   
+                        <div class="col-md-2 form-group mb-3">
+                        <label><h6>STATUS</h6></label>
+                        <input type="text" class="form-control" id="status_ui2_solusi" name="status_ui2_solusi" value="<?php echo ($rp->status_ui2_solusi); ?>" disabled> 
+                       </div>
+                       <div class="col-md-3 form-group mb-3">
+                       <label for="textarea"><h6>CATATAN</h6></label>
+                        <textarea type="text" rows="5" name="catui2_solusi" class="form-control" disabled> <?php echo $rp->catui2_solusi?></textarea>
+                        </div>
+                        </div>
+
+                        <!-- prev ui3 aplikasi -->
+                        <div class="row">
+                        <div class="col-md-7 form-group mb-3">
+                        <label><h4>3.6 PREVIEW UI/UX-3</h4></label>
+                        <br>
+                        <img src="<?php echo base_url().'assets/files/'.$rp->prev_ui3_solusi?>" class="img-thumbnail" width="450px"></div>
+                       
+                        <div class="col-md-2 form-group mb-3">
+                        <label><h6>STATUS</h6></label>
+                        <input type="text" class="form-control" id="status_ui3_solusi" name="status_ui3_solusi" value="<?php echo ($rp->status_ui3_solusi); ?>" disabled> 
+                       </div>
+                       <div class="col-md-3 form-group mb-3">
+                       <label for="textarea"><h6>CATATAN</h6></label>
+                        <textarea type="text" rows="5" name="catui3_solusi" class="form-control" disabled> <?php echo $rp->catui3_solusi?></textarea>
+                        </div>
+                        </div>
+
+                        <!-- prev ui4 aplikasi -->
+                        <div class="row">
+                        <div class="col-md-7 form-group mb-3">
+                        <label><h4>3.7 PREVIEW UI/UX-4</h4></label>
+                        <br>
+                        <img src="<?php echo base_url().'assets/files/'.$rp->prev_ui4_solusi?>" class="img-thumbnail" width="450px"></div>
+                      
+                        <div class="col-md-2 form-group mb-3">
+                        <label><h6>STATUS</h6></label>
+                        <input type="text" class="form-control" id="status_ui4_solusi" name="status_ui4_solusi" value="<?php echo ($rp->status_ui1_solusi); ?>" disabled> 
+                       </div>
+                       <div class="col-md-3 form-group mb-3">
+                       <label for="textarea"><h6>CATATAN</h6></label>
+                        <textarea type="text" rows="5" name="catui4_solusi" class="form-control" disabled> <?php echo $rp->catui4_solusi?></textarea>
+                        </div>
+                        </div>
+
+                        <!-- tahun buat aplikasi -->
+                        <div class="row">
+                        <div class="col-md-7 form-group mb-3">
+                        <label><h4>3.8 TAHUN PEMBUATAN APLIKASI</h4></label>
+                        <input type="number" class="form-control" id="tahun_buat_solusi" name="tahun__buat_solusi" value="<?php echo strtoupper ($rp->tahun_buat_solusi); ?>" disabled> 
+                        </div>
+                      
+                        <div class="col-md-2 form-group mb-3">
+                        <label><h6>STATUS</h6></label>
+                        <input type="text" class="form-control" id="status_tahun_solusi" name="status_tahun_solusi" value="<?php echo ($rp->status_tahun_solusi); ?>" disabled> 
+                       </div>
+                       <div class="col-md-3 form-group mb-3">
+                       <label for="textarea"><h6>CATATAN</h6></label>
+                        <textarea type="text" rows="1" name="cattahun_solusi" class="form-control" disabled> <?php echo $rp->cattahun_solusi?></textarea>
+                        </div>
+                        </div>
+
+                        <!-- link video aplikasi -->
+                        <div class="row">
+                        <div class="col-md-7 form-group mb-3">
+                        <label><h4>3.9 LINK VIDEO APLIKASI</h4></label>
+                        <input type="text" class="form-control" id="link_vid_solusi" name="link_vid_solusi" value="<?php echo $rp->link_vid_solusi ?>" disabled> 
+                        </div>
+                     
+                        <div class="col-md-2 form-group mb-3">
+                        <label><h6>STATUS</h6></label>
+                        <input type="text" class="form-control" id="status_linkvid_solusi" name="status_linkvid_solusi" value="<?php echo ($rp->status_linkvid_solusi); ?>" disabled> 
+                       </div>
+                       <div class="col-md-3 form-group mb-3">
+                       <label for="textarea"><h6>CATATAN</h6></label>
+                        <textarea type="text" rows="1" name="catlinkvid_solusi" class="form-control" disabled> <?php echo $rp->catlinkvid_solusi?></textarea>
+                        </div>
+                        </div>
+
+                        <!-- link produk aplikasi -->
+                        <div class="row">
+                        <div class="col-md-7 form-group mb-3">
+                        <label><h4>3.10 LINK PRODUK APLIKASI</h4></label>
+                        <input type="text" class="form-control" id="link_prod_solusi" name="link_prod_solusi" value="<?php echo $rp->link_prod_solusi ?>" disabled> 
+                        </div>
+                        
+                        <div class="col-md-2 form-group mb-3">
+                        <label><h6>STATUS</h6></label>
+                        <input type="text" class="form-control" id="status_linkprod_solusi" name="status_linkprod_solusi" value="<?php echo ($rp->status_linkprod_solusi); ?>" disabled> 
+                       </div>
+                       <div class="col-md-3 form-group mb-3">
+                       <label for="textarea"><h6>CATATAN</h6></label>
+                        <textarea type="text" rows="1" name="catlinkprod_solusi" class="form-control" disabled> <?php echo $rp->catlinkprod_solusi?></textarea>
+                        </div>
+                        </div>
+
+                           <!-- teknologi yang digunakan aplikasi -->
+                           <div class="row">
+                        <div class="col-md-7 form-group mb-3">
+                        <label for="textarea"><h4>3.11 TEKNOLOGI YANG DIGUNAKAN</h4></label>
+                        <textarea id="content10" type="text" rows="7" name="teknologi_solusi" class="form-control" disabled> <?php echo $rp->teknologi_solusi ?></textarea>
+                        </div>
+                      
+                        <div class="col-md-2 form-group mb-3">
+                        <label><h6>STATUS</h6></label>
+                        <input type="text" class="form-control" id="status_tekn_solusi" name="status_tekn_solusi" value="<?php echo ($rp->status_tekn_solusi); ?>" disabled> 
+                       </div>
+                       <div class="col-md-3 form-group mb-3">
+                       <label for="textarea"><h6>CATATAN</h6></label>
+                        <textarea type="text" rows="7" name="cattekn_solusi" class="form-control" disabled> <?php echo $rp->cattekn_solusi?></textarea>
+                        </div>
+                        </div>
+
+                
+                     <?php endforeach; ?>
 
                   
-                     
-                     </table>
+                   
                      <?php echo anchor('dosen/daftarproposal','<button class="btn btn-sm btn-primary mb-3"></i> Back </button> ')?>
                    
                      <br>
@@ -234,7 +217,13 @@
                      
                   </div>
                  
-                     
+                  <script>
+                // Replace the <textarea id="editor1"> with a CKEditor 4
+                // instance, using default configuration.
+                CKEDITOR.replace( 'content9' );
+                CKEDITOR.replace( 'content10' );
+               
+            </script>
                </div>
                
             </div>

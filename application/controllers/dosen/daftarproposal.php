@@ -72,6 +72,7 @@ class DaftarProposal extends CI_Controller {
         ORDER BY tb_mahasiswa.nim_mhs ASC")->result();*/
         
 
+        $this->load->view('templates_dosen/header_daftarpro');
         $this->load->view('dosen/detail1',$data);
         $this->load->view('templates_dosen/footer');
 
@@ -84,6 +85,7 @@ class DaftarProposal extends CI_Controller {
         $data['user'] = $this->db->get_where('tb_user', ['uname_user' => $this->session->userdata('uname_user')])->row_array();
         $data['detailpro2'] = $this->daftarproposal_model->detailpro2($id_proposal);
 
+        $this->load->view('templates_dosen/header_daftarpro');
         $this->load->view('dosen/detail2',$data);
         $this->load->view('templates_dosen/footer');
 
@@ -96,6 +98,7 @@ class DaftarProposal extends CI_Controller {
         $data['user'] = $this->db->get_where('tb_user', ['uname_user' => $this->session->userdata('uname_user')])->row_array();
         $data['detailpro3'] = $this->daftarproposal_model->detailpro3($id_proposal);
 
+        $this->load->view('templates_dosen/header_daftarpro');
         $this->load->view('dosen/detail3',$data);
         $this->load->view('templates_dosen/footer');
 
@@ -108,6 +111,7 @@ class DaftarProposal extends CI_Controller {
         $data['user'] = $this->db->get_where('tb_user', ['uname_user' => $this->session->userdata('uname_user')])->row_array();
         $data['detailpro4'] = $this->daftarproposal_model->detailpro4($id_proposal);
 
+        $this->load->view('templates_dosen/header_daftarpro');
         $this->load->view('dosen/detail4',$data);
         $this->load->view('templates_dosen/footer');
 
@@ -120,11 +124,96 @@ class DaftarProposal extends CI_Controller {
         $data['user'] = $this->db->get_where('tb_user', ['uname_user' => $this->session->userdata('uname_user')])->row_array();
         $data['detailpro5'] = $this->daftarproposal_model->detailpro5($id_proposal);
 
+        $this->load->view('templates_dosen/header_daftarpro');
         $this->load->view('dosen/detail5',$data);
         $this->load->view('templates_dosen/footer');
 
 
+    } 
+
+    public function verifikasi1($id_proposal)
+    {
+        $this->session->set_userdata('id_proposal', $id_proposal);
+        $data['halaman'] = "Halaman Verifikasi BAB 1";
+        $data['user'] = $this->db->get_where('tb_user', ['uname_user' => $this->session->userdata('uname_user')])->row_array();
+        $data['verif1'] = $this->daftarproposal_model->getIdVerif1($id_proposal)->row_array();
+       
+        //$this->form_validation->set_rules('nama_start_up', 'nama_start_up',);
+        $this->form_validation->set_rules('status_nama_su', 'status_nama_su', 'required');
+        $this->form_validation->set_rules('catnama_su', 'catnama_su', 'required');
+        //$this->form_validation->set_rules('visi_start_up', 'visi_start_up',);
+        $this->form_validation->set_rules('status_visi_su', 'status_visi_su', 'required');
+        $this->form_validation->set_rules('catvisi_su', 'catvisi_su', 'required');
+        //$this->form_validation->set_rules('misi_start_up', 'misi_start_up',);
+        $this->form_validation->set_rules('status_misi_su', 'status_misi_su', 'required');
+        $this->form_validation->set_rules('catmisi_su', 'catmisi_su', 'required');
+        //$this->form_validation->set_rules('struktur_start_up', 'struktur_start_up',);
+        $this->form_validation->set_rules('status_struktur_su', 'status_struktur_su', 'required');
+        $this->form_validation->set_rules('catstruktur_su', 'catstruktur_su', 'required');
+        //$this->form_validation->set_rules('logo_start_up', 'logo_start_up',);
+        $this->form_validation->set_rules('status_logo_su', 'status_logo_su', 'required');
+        $this->form_validation->set_rules('catlogo_su', 'catlogo_su', 'required');
+        //$this->form_validation->set_rules('tagline_start_up', 'tagline_start_up',);
+        $this->form_validation->set_rules('status_tagline_su', 'status_tagline_su', 'required');
+        $this->form_validation->set_rules('cattagline_su', 'cattagline_su', 'required');
+        
+        if ($this->form_validation->run() == false) {
+            $this->load->view('templates_dosen/header_daftarpro');
+            $this->load->view('dosen/detail1_verifikasi', $data );
+            $this->load->view('templates_dosen/footer');
+        } else {
+            $this->daftarproposal_model->verifikasib1($id_proposal);
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> Judul Proposal berhasil ditambahkan </div>');
+            redirect('dosen/daftarproposal/detail1/');
+        }
     }
+
+
+    public function verifikasi5($id_proposal)
+    {
+        $this->session->set_userdata('id_proposal', $id_proposal);
+        $data['halaman'] = "Halaman Verifikasi BAB ";
+        $data['user'] = $this->db->get_where('tb_user', ['uname_user' => $this->session->userdata('uname_user')])->row_array();
+        $data['verif5'] = $this->daftarproposal_model->getIdVerif5($id_proposal)->row_array();
+        $data['averif5'] = $this->daftarproposal_model->detailpro5($id_proposal);
+
+       
+        
+        $this->form_validation->set_rules('status_cust_plan', 'status_cust_plan',);
+        $this->form_validation->set_rules('catcust_plan', 'catcust_plan',);
+        $this->form_validation->set_rules('status_value_plan', 'status_value_plan',);
+        $this->form_validation->set_rules('catvalue_plan', 'catvalue_plan',);
+        $this->form_validation->set_rules('status_channels_plan', 'status_channels_plan',);
+        $this->form_validation->set_rules('catchannels_plan', 'catchannels_plan',);
+        $this->form_validation->set_rules('status_relation_plan', 'status_relation_plan',);
+        $this->form_validation->set_rules('catrelation_plan', 'catrelation_plan',);
+        $this->form_validation->set_rules('status_keyact_plan', 'status_keyact_plan',);
+        $this->form_validation->set_rules('catkeyact_plan', 'catkeyact_plan',);
+        $this->form_validation->set_rules('status_keyres_plan', 'status_keyres_plan',);
+        $this->form_validation->set_rules('catkeyres_plan', 'catkeyres_plan',);
+        $this->form_validation->set_rules('status_keypart_plan', 'status_keypart_plan',);
+        $this->form_validation->set_rules('catkeypart_plan', 'catkeypart_plan',);
+        $this->form_validation->set_rules('status_cost_plan', 'status_cost_plan',);
+        $this->form_validation->set_rules('catcost_plan', 'catcost_plan',);
+        $this->form_validation->set_rules('status_revenue_plan', 'status_revenue_plan',);
+        $this->form_validation->set_rules('catrevenue_plan', 'catrevenue_plan',);
+
+        
+        
+        if ($this->form_validation->run() == false) {
+            $this->load->view('templates_dosen/header_daftarpro');
+            $this->load->view('dosen/detail5_verifikasi', $data );
+            $this->load->view('templates_dosen/footer');
+        } else {
+            $this->daftarproposal_model->verifikasib1($id_proposal);
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> Judul Proposal berhasil ditambahkan </div>');
+            redirect('dosen/daftarproposal/detail5/');
+        }
+    }
+
+
+    
+
 }
 
 

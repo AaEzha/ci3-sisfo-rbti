@@ -1,72 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-   <head>
-      <!-- basic -->
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <!-- mobile metas -->
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-      <!-- site metas -->
-      <title>E-Proposal RBTI</title>
-      <meta name="keywords" content="">
-      <meta name="description" content="">
-      <meta name="author" content="">
-      <!-- bootstrap css -->
-      <link rel="stylesheet" href="<?php echo base_url()?>assets/css/bootstrap.min.css">
-      <!-- style css -->
-      <link rel="stylesheet" href="<?php echo base_url()?>assets/css/style.css">
-      <!-- Responsive-->
-      <link rel="stylesheet" href="<?php echo base_url()?>assets/css/responsive.css">
-      <!-- fevicon -->
-      <link rel="icon" href="<?php echo base_url()?>assets/images/fevicon.png" type="image/gif" />
-      <!-- Scrollbar Custom CSS -->
-      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-       <link rel="stylesheet" href="<?php echo base_url()?>assets/css/owl.carousel.min.css"> 
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-      <link rel="stylesheet" href="https://rawgit.com/LeshikJanz/libraries/master/Bootstrap/baguetteBox.min.css">
-      <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
-   </head>
-   <!-- body -->
-   <body class="main-layout">
-      <!-- end loader -->
-      <!-- top -->
-                    <!-- header -->
-         <header class="header-area">
-            <div class="left">
-               <a href="Javascript:void(0)"><i class="fa fa-search" aria-hidden="true"></i></a>
-            </div>
-            <div class="right">
-            <a href="<?php echo base_url('welcome/logout')?>"><i class="fa fa-sign-out" aria-hidden="true"></i>logout</a>
-            </div>
-            <div class="container">
-               <div class="row d_flex">
-                  <div class="col-sm-3 logo_sm">
-                     <div class="logo">
-                        <a href="index.html"></a>
-                     </div>
-                  </div>
-                  <div class="col-lg-19 offset-lg-2 col-md-12 col-sm-9">
-                     <div class="navbar-area">
-                        <nav class="site-navbar">
-                           <ul>
-                              <li><a href="<?php echo base_url('/dosen/dashboard')?>">Home</a></li>
-                              <li><a href="<?php echo base_url('/dosen/daftarmahasiswa')?>">Daftar Mahasiswa</a></li>
-                              <li><a class="active" href="<?php echo base_url('/dosen/daftarproposal')?>">Daftar E-Proposal</a></li>
-                              <li><a href="doctores.html">Profil</a></li>
-                           </ul>
-                           <button class="nav-toggler">
-                           <span></span>
-                           </button>
-                        </nav>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </header> 
-      <!-- end header -->
+
    
 <!-- cases -->
 <div class="cases">
@@ -83,156 +15,259 @@
             <div class="row d_flex" >
                <div class=" col-md-12" >
                   <div class="latest text_align_center" >
-                  <table class="table table-bordered table-stripped table-hover" >
-                  <?php $no=1; foreach($detailpro4 as $d) :  ?>
+                   <?php $no=1; foreach($detailpro4 as $pp) :  ?>
+                     <?php echo anchor('dosen/daftarproposal/verifikasi4/'.$pp->id_proposal,'<button class="btn btn-sm btn-primary mb-3"></i> Verifikasi </button> ')?>
+                   
                     
-                    <tr>
-                    <th>4.1</th>
-                           <th>LATAR BELAKANG</th>
-                           <td><?php echo $d->latar_belakang_pp ?></td>
-                            <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_pp,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_pp,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
-                     
-
-                     </tr>
-                     <tr>
-                     <th>4.2</th>
-                           <th>PERMASALAHAN YANG INGIN DIATASI</th>
-                           <td><?php echo $d->permasalahan_pp ?></td>
-                            <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_pp,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_pp,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
-                     
-
-                     </tr>
-                     <tr>
-                     <th>4.3</th>
-                           <th>SOLUSI YANG DITAWARKAN</th>
-                           <td><?php echo $d->solusi_pp ?></td>
-                            <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_pp,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_pp,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
-                     
-
-                     </tr>
-                     <tr>
-                     <th>4.4</th>
-                           <th>PROGRESS USAHA</th>
-                           <td><?php echo $d->progres_pp ?></td>
-                            <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_pp,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_pp,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
-                     
-
-                     </tr>
-                     <tr>
-                     <th>4.5</th>
-                           <th>COMPETITOR USAHA</th>
-                           <td><?php echo $d->kompetitor_pp ?></td>
-                            <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_pp,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_pp,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
-                     
-
-                     </tr>
-                     <tr>
-                     <th>4.6</th>
-                           <th>USAHA SERUPA</th>
-                           <td><?php echo $d->kompetitor2_pp ?></td>
-                            <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_pp,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_pp,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
-                     
-
-                     </tr>
-                     <tr>
-                     <th>4.7</th>
-                           <th>TARGET PENGGUNA</th>
-                           <td><?php echo $d->target_pp ?></td>
-                            <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_pp,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_pp,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
-                     
-
-                     </tr>
-                     <tr>
-                     <th>4.8</th>
-                           <th>DATA YANG DIGUNAKAN</th>
-                           <td><?php echo $d->data_pp ?></td>
-                            <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_pp,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_pp,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
-                     
-
-                     </tr>
-                     <tr>
-                     <th>4.9</th>
-                           <th>PROSES BISNIS</th>
-                           <td><?php echo $d->proses_bisnis_pp ?></td>
-                            <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_pp,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_pp,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
-                     
-
-                     </tr>
-                     <tr>
-                     <th>4.10</th>
-                           <th>PROSES BISNIS (GAMBAR)</th>
-                           <td><img src="<?php echo base_url().'assets/files/'.$d->proses_bisnis2_pp?>"></td>
-                            <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_pp,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_pp,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
-                     
+                     <!-- latar belakang -->
+                  <div class="row">
+                        <div class="col-md-7 form-group mb-3">
+                        <label for="textarea"><h4>4.1 LATAR BELAKANG</h4></label>
+                        <textarea id="content11" type="text" rows="7" name="latar_belakang_pp" class="form-control" disabled> <?php echo $pp->latar_belakang_pp ?></textarea>
+                        </div>
+                       
                         
+                        <div class="col-md-2 form-group mb-3">
+                        <label><h6>STATUS</h6></label>
+                        <input type="text" class="form-control" id="status_latarb_pp" name="status_latarb_pp" value="<?php echo ($pp->status_latarb_pp); ?>" disabled> 
+                       </div>
+                       <div class="col-md-3 form-group mb-3">
+                       <label for="textarea"><h6>CATATAN</h6></label>
+                        <textarea type="text" rows="7" name="catlatarb_pp" class="form-control" disabled> <?php echo $pp->catlatarb_pp?></textarea>
+                        </div>
+                        </div>
 
-                     </tr>
-                     <tr>
-                     <th>4.11</th>
-                           <th>TAHAPAN MEWUJUDKAN SOLUSI</th>
-                           <td><?php echo $d->tahapan_pp ?></td>
-                            <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_pp,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_pp,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
-                     
+                         <!-- permasalahan yang ditemui-->
+                        <div class="row">
+                        <div class="col-md-7 form-group mb-3">
+                        <label id="content13" for="textarea"><h4>4.2 PERMASALAHAN YANG INGIN DIATASI</h4></label>
+                        <textarea type="text" rows="7" name="permasalahan_pp" class="form-control" disabled> <?php echo $pp->permasalahan_pp ?></textarea>
+                        </div>
+                       
+                        
+                        <div class="col-md-2 form-group mb-3">
+                        <label><h6>STATUS</h6></label>
+                        <input type="text" class="form-control" id="status_permas_pp" name="status_permas_pp" value="<?php echo ($pp->status_permas_pp); ?>" disabled> 
+                       </div>
+                       <div class="col-md-3 form-group mb-3">
+                       <label for="textarea"><h6>CATATAN</h6></label>
+                        <textarea type="text" rows="7" name="catpermas_pp" class="form-control" disabled> <?php echo $pp->catpermas_pp?></textarea>
+                        </div>
+                        </div>
 
-                     </tr>
-                     <tr>
-                     <th>4.12</th>
-                           <th>KELEBIHAN DARI SOLUSI ANDA</th>
-                           <td><?php echo $d->kelebihan_pp ?></td>
-                            <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_pp,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_pp,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
-                     
+                    <!-- SOLUSI YANG DITAWARKAN-->
+                    <div class="row">
+                        <div class="col-md-7 form-group mb-3">
+                        <label for="textarea"><h4>4.3 SOLUSI YANG DITAWARKAN</h4></label>
+                        <textarea id="content13" type="text" rows="7" name="solusi_pp" class="form-control" disabled> <?php echo $pp->solusi_pp ?></textarea>
+                        </div>
+                       
+                        
+                        <div class="col-md-2 form-group mb-3">
+                        <label><h6>STATUS</h6></label>
+                        <input type="text" class="form-control" id="status_solusi_pp" name="status_solusi_pp" value="<?php echo ($pp->status_solusi_pp); ?>" disabled> 
+                       </div>
+                       <div class="col-md-3 form-group mb-3">
+                       <label for="textarea"><h6>CATATAN</h6></label>
+                        <textarea type="text" rows="7" name="catsolusi_pp" class="form-control" disabled> <?php echo $pp->catsolusi_pp?></textarea>
+                        </div>
+                        </div>
+                  
+                  
+                   <!-- SOLUSI YANG DITAWARKAN-->
+                   <div class="row">
+                        <div class="col-md-7 form-group mb-3">
+                        <label for="textarea"><h4>4.4 PROGRESS USAHA</h4></label>
+                        <textarea id="content14" type="text" rows="7" name="progres_pp" class="form-control" disabled> <?php echo $pp->progres_pp ?></textarea>
+                        </div>
+                        
+                        
+                        <div class="col-md-2 form-group mb-3">
+                        <label><h6>STATUS</h6></label>
+                        <input type="text" class="form-control" id="status_progres_pp" name="status_solusi_pp" value="<?php echo ($pp->status_progres_pp); ?>" disabled> 
+                       </div>
+                       <div class="col-md-3 form-group mb-3">
+                       <label for="textarea"><h6>CATATAN</h6></label>
+                        <textarea type="text" rows="7" name="catprogres_pp" class="form-control" disabled> <?php echo $pp->catprogres_pp?></textarea>
+                        </div>
+                        </div>
+                  
+                   <!-- KOMPETITOR USAHA-->
+                   <div class="row">
+                        <div class="col-md-7 form-group mb-3">
+                        <label for="textarea"><h4>4.5 KOMPETITOR USAHA</h4></label>
+                        <textarea id="content15" type="text" rows="7" name="kompetitor_pp" class="form-control" disabled> <?php echo $pp->kompetitor_pp?></textarea>
+                        </div>
+                      
+                        
+                        <div class="col-md-2 form-group mb-3">
+                        <label><h6>STATUS</h6></label>
+                        <input type="text" class="form-control" id="status_komp_pp" name="status_komp_pp" value="<?php echo ($pp->status_komp_pp); ?>" disabled> 
+                       </div>
+                       <div class="col-md-3 form-group mb-3">
+                       <label for="textarea"><h6>CATATAN</h6></label>
+                        <textarea type="text" rows="7" name="catkomp_pp" class="form-control" disabled> <?php echo $pp->catkomp_pp?></textarea>
+                        </div>
+                        </div>
 
-                     </tr>
+                  <!-- USAHA SERUPA-->
+                  <div class="row">
+                        <div class="col-md-7 form-group mb-3">
+                        <label for="textarea"><h4>4.6 USAHA SERUPA</h4></label>
+                        <textarea id="content16" type="text" rows="7" name="kompetitor2_pp" class="form-control" disabled> <?php echo $pp->kompetitor2_pp?></textarea>
+                        </div>
+                        
+                        
+                        <div class="col-md-2 form-group mb-3">
+                        <label><h6>STATUS</h6></label>
+                        <input type="text" class="form-control" id="status_komp2_pp" name="status_komp2_pp" value="<?php echo ($pp->status_komp2_pp); ?>" disabled> 
+                       </div>
+                       <div class="col-md-3 form-group mb-3">
+                       <label for="textarea"><h6>CATATAN</h6></label>
+                        <textarea type="text" rows="7" name="catkomp2_pp" class="form-control" disabled> <?php echo $pp->catkomp2_pp?></textarea>
+                        </div>
+                        </div>
 
 
-                <?php endforeach; ?>
+                  <!-- TARGET PENGGUNA-->
+                  <div class="row">
+                        <div class="col-md-7 form-group mb-3">
+                        <label for="textarea"><h4>4.7 TARGET PENGGUNA</h4></label>
+                        <textarea id="content17" type="text" rows="7" name="target_pp" class="form-control" disabled> <?php echo $pp->target_pp?></textarea>
+                        </div>
+                       
+                        
+                        <div class="col-md-2 form-group mb-3">
+                        <label><h6>STATUS</h6></label>
+                        <input type="text" class="form-control" id="status_target_pp" name="status_target_pp" value="<?php echo ($pp->status_target_pp); ?>" disabled> 
+                       </div>
+                       <div class="col-md-3 form-group mb-3">
+                       <label for="textarea"><h6>CATATAN</h6></label>
+                        <textarea type="text" rows="7" name="cattarget_pp" class="form-control" disabled> <?php echo $pp->cattarget_pp?></textarea>
+                        </div>
+                        </div>
 
                   
+                  <!-- DATA YANG DIGUNAKAN-->
+                  <div class="row">
+                        <div class="col-md-7 form-group mb-3">
+                        <label for="textarea"><h4>4.8 DATA YANG DIGUNAKAN</h4></label>
+                        <textarea id="content18" type="text" rows="7" name="data_pp" class="form-control" disabled> <?php echo $pp->data_pp?></textarea>
+                        </div>
+                       
+                        
+                        <div class="col-md-2 form-group mb-3">
+                        <label><h6>STATUS</h6></label>
+                        <input type="text" class="form-control" id="status_data_pp" name="status_data_pp" value="<?php echo ($pp->status_data_pp); ?>" disabled> 
+                       </div>
+                       <div class="col-md-3 form-group mb-3">
+                       <label for="textarea"><h6>CATATAN</h6></label>
+                        <textarea type="text" rows="7" name="catdata_pp" class="form-control" disabled> <?php echo $pp->catdata_pp?></textarea>
+                        </div>
+                        </div>
+
+                  
+                  
+                  <!-- PROSES BISNIS-->
+                  <div class="row">
+                        <div class="col-md-7 form-group mb-3">
+                        <label for="textarea"><h4>4.9 PROSES BISNIS</h4></label>
+                        <textarea id="content19" type="text" rows="7" name="proses_bisnis_pp" class="form-control" disabled> <?php echo $pp->proses_bisnis_pp?></textarea>
+                        </div>
+                      
+                        
+                        <div class="col-md-2 form-group mb-3">
+                        <label><h6>STATUS</h6></label>
+                        <input type="text" class="form-control" id="status_pb_pp" name="status_pb_pp" value="<?php echo ($pp->status_pb_pp); ?>" disabled> 
+                       </div>
+                       <div class="col-md-3 form-group mb-3">
+                       <label for="textarea"><h6>CATATAN</h6></label>
+                        <textarea type="text" rows="7" name="catpb_pp" class="form-control" disabled> <?php echo $pp->catpb_pp?></textarea>
+                        </div>
+                        </div>
+
+
+                  <!-- PROSES BISNIS -->
+                      <div class="row">
+                        <div class="col-md-7 form-group mb-3">
+                        <label><h4>4.10 PROSES BISNIS</h4></label>
+                        <br>
+                        <img src="<?php echo base_url().'assets/files/'.$pp->proses_bisnis2_pp?>" class="img-thumbnail" width="450px"></div>
                      
-                     </table>
-                     <?php echo anchor('dosen/daftarproposal','<button class="btn btn-sm btn-primary mb-3"></i> Back </button> ')?>
+                        
+                        <div class="col-md-2 form-group mb-3">
+                        <label><h6>STATUS</h6></label>
+                        <input type="text" class="form-control" id="status_pb2_pp" name="status_pb2_pp" value="<?php echo ($pp->status_pb2_pp); ?>" disabled> 
+                       </div>
+                       <div class="col-md-3 form-group mb-3">
+                       <label for="textarea"><h6>CATATAN</h6></label>
+                        <textarea type="text" rows="7" name="catpb2_pp" class="form-control" disabled> <?php echo $pp->catpb2_pp?></textarea>
+                        </div>
+                        </div>
+
+
+                  <!-- TAHAPAN MEWUJUDKAN SOLUSI-->
+                  <div class="row">
+                        <div class="col-md-7 form-group mb-3">
+                        <label for="textarea"><h4>4.11 TAHAPAN MEWUJUDKAN SOLUSI</h4></label>
+                        <textarea id="content20" type="text" rows="7" name="tahapan_pp" class="form-control" disabled> <?php echo $pp->tahapan_pp?></textarea>
+                        </div>
+                     
+                        
+                        <div class="col-md-2 form-group mb-3">
+                        <label><h6>STATUS</h6></label>
+                        <input type="text" class="form-control" id="status_tahap_pp" name="status_tahap_pp" value="<?php echo ($pp->status_tahap_pp); ?>" disabled> 
+                       </div>
+                       <div class="col-md-3 form-group mb-3">
+                       <label for="textarea"><h6>CATATAN</h6></label>
+                        <textarea type="text" rows="7" name="cattahap_pp" class="form-control" disabled> <?php echo $pp->cattahap_pp?></textarea>
+                        </div>
+                        </div>
+
+
+                  <!-- KELEBIHAN DARI SOLUSI ANDA -->
+                  <div class="row">
+                        <div class="col-md-7 form-group mb-3">
+                        <label for="textarea"><h4>4.12 KELEBIHAN DARI SOLUSI ANDA</h4></label>
+                        <textarea id="content21"  type="text" rows="7" name="kelebihan_pp" class="form-control" disabled> <?php echo $pp->kelebihan_pp?></textarea>
+                        </div>
+                       
+                        
+                        <div class="col-md-2 form-group mb-3">
+                        <label><h6>STATUS</h6></label>
+                        <input type="text" class="form-control" id="status_keleb_pp" name="status_keleb_pp" value="<?php echo ($pp->status_keleb_pp); ?>" disabled> 
+                       </div>
+                       <div class="col-md-3 form-group mb-3">
+                       <label for="textarea"><h6>CATATAN</h6></label>
+                        <textarea type="text" rows="7" name="catkeleb_pp" class="form-control" disabled> <?php echo $pp->catkeleb_pp?></textarea>
+                        </div>
+                        </div>
+                  
+         
+
+                     <?php endforeach; ?>
+
+                  <?php echo anchor('dosen/daftarproposal','<button class="btn btn-sm btn-primary mb-3"></i> Back </button> ')?>
                    
                      <br>
                      <br>
                      
                   </div>
-                 
+                  <script>
+                // Replace the <textarea id="editor1"> with a CKEditor 4
+                // instance, using default configuration.
+                CKEDITOR.replace( 'content11' );
+                CKEDITOR.replace( 'content12' );
+                CKEDITOR.replace( 'content13' );
+                CKEDITOR.replace( 'content14' );
+                CKEDITOR.replace( 'content15' );
+                CKEDITOR.replace( 'content16' );
+                CKEDITOR.replace( 'content17' );
+                CKEDITOR.replace( 'content18' );
+                CKEDITOR.replace( 'content19' );
+                CKEDITOR.replace( 'content20' );
+                CKEDITOR.replace( 'content21' );
+            </script>
                      
                </div>
                

@@ -28,12 +28,17 @@
       <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"></link>
+      <link rel="stylesheet" href="css/font-awesome.min.css"> 
+      <link href="summernote/summernote.css" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"></link>
+
    </head>
    <!-- body -->
    <body class="main-layout">
       <!-- loader  -->
-   
-      <!-- end loader -->
+      <script src="<?php echo base_url()?>assets/vendor/ckeditor/ckeditor.js"></script>
+    <!-- end loader -->
       <!-- top -->
                     <!-- header -->
          <header class="header-area">

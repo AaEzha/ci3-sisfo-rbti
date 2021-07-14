@@ -1,72 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-   <head>
-      <!-- basic -->
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <!-- mobile metas -->
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-      <!-- site metas -->
-      <title>E-Proposal RBTI</title>
-      <meta name="keywords" content="">
-      <meta name="description" content="">
-      <meta name="author" content="">
-      <!-- bootstrap css -->
-      <link rel="stylesheet" href="<?php echo base_url()?>assets/css/bootstrap.min.css">
-      <!-- style css -->
-      <link rel="stylesheet" href="<?php echo base_url()?>assets/css/style.css">
-      <!-- Responsive-->
-      <link rel="stylesheet" href="<?php echo base_url()?>assets/css/responsive.css">
-      <!-- fevicon -->
-      <link rel="icon" href="<?php echo base_url()?>assets/images/fevicon.png" type="image/gif" />
-      <!-- Scrollbar Custom CSS -->
-      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-       <link rel="stylesheet" href="<?php echo base_url()?>assets/css/owl.carousel.min.css"> 
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-      <link rel="stylesheet" href="https://rawgit.com/LeshikJanz/libraries/master/Bootstrap/baguetteBox.min.css">
-      <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
-   </head>
-   <!-- body -->
-   <body class="main-layout">
-      <!-- end loader -->
-      <!-- top -->
-                    <!-- header -->
-         <header class="header-area">
-            <div class="left">
-               <a href="Javascript:void(0)"><i class="fa fa-search" aria-hidden="true"></i></a>
-            </div>
-            <div class="right">
-            <a href="<?php echo base_url('welcome/logout')?>"><i class="fa fa-sign-out" aria-hidden="true"></i>logout</a>
-            </div>
-            <div class="container">
-               <div class="row d_flex">
-                  <div class="col-sm-3 logo_sm">
-                     <div class="logo">
-                        <a href="index.html"></a>
-                     </div>
-                  </div>
-                  <div class="col-lg-19 offset-lg-2 col-md-12 col-sm-9">
-                     <div class="navbar-area">
-                        <nav class="site-navbar">
-                           <ul>
-                              <li><a href="<?php echo base_url('/dosen/dashboard')?>">Home</a></li>
-                              <li><a href="<?php echo base_url('/dosen/daftarmahasiswa')?>">Daftar Mahasiswa</a></li>
-                              <li><a class="active" href="<?php echo base_url('/dosen/daftarproposal')?>">Daftar E-Proposal</a></li>
-                              <li><a href="doctores.html">Profil</a></li>
-                           </ul>
-                           <button class="nav-toggler">
-                           <span></span>
-                           </button>
-                        </nav>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </header> 
-      <!-- end header -->
+
    
 <!-- cases -->
 <div class="cases">
@@ -83,133 +15,114 @@
             <div class="row d_flex" >
                <div class=" col-md-12" >
                   <div class="latest text_align_center" >
-                  <table class="table table-bordered table-stripped table-hover" >
-                  <?php $no=1; foreach($detailpro1 as $d) :  ?>
-                     <div class="row">
-                                        <div class="col-md-7">
-                                            <div class="form-group bmd-form-group">
-                                                <div class="form-group">
-                                                    <label class="bmd-label-floating">Uraian Singkat Produk</label>
-                                                    <textarea class="form-control" rows="3" name="nama_start_up" id="nama_start_up" disabled]; ?><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_start_up,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></textarea>
-                                   
-                                                </div>
-                                            </div>
-                                        </div>
-                     <div class="col-md-3">
-                                            <div class="form-group bmd-form-group">
-                                                <div class="form-group">
-                                                    <label class="bmd-label-floating"><h4>Catatan</h4></label>
-                                                    <textarea class="form-control" rows="3" cols="100" name="visi_start_up" id="visi_start_up" disabled> <?php echo $d->visi_start_up ?></textarea>
-                                                    <?= form_error('catDeskripsi', '<small class="text-danger pl-3">', '</small>') ?>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-2">
-                                            <div class="form-group bmd-form-group">
-                                                <div class="form-group">
-                                                    <label class="bmd-label-floating"><h4>Catatan</h4></label>
-                                                    <textarea class="form-control" rows="3" cols="100" name="visi_start_up" id="visi_start_up" disabled> <?php echo $d->visi_start_up ?></textarea>
-                                                    <?= form_error('catDeskripsi', '<small class="text-danger pl-3">', '</small>') ?>
-                                                </div>
-                                            </div>
-                                        </div>
+                  <?php $no=1; foreach($detailpro1 as $su) :  ?>
+                  <?php echo anchor('dosen/daftarproposal/verifikasi1/'.$su->id_proposal,'<button class="btn btn-sm btn-primary mb-3"></i> Verifikasi </button> ')?>
+                   
+                  
 
-                                     
-                    
-                    <tr>
-                    <th  width="10px">1.1</th>   
-                           <th  width="10px">NAMA PERUSAHAAN</th>
-                           <td  width="100px"><?php echo strtoupper ($d->nama_start_up); ?></td>
-                           <td width="30px">
-                           CATATAN
-                           <input type="text"  name="nama_hacker" placeholder="masukkan catatan (jika ada)" class="form-control">
-                           <?php echo form_error('nama_hacker','<div class="text-danger small" ml-3>')?>
-                            </td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_start_up,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                                          
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_start_up,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-info"></i></div>')?></td>
-                     
-                     </tr>
-                     <tr>
-                     <th>1.2</th>
-                           <th>VISI PERUSAHAAN</th>
-                           <td><?php echo $d->visi_start_up ?></td>
-                           <td width="30px">
-                           CATATAN
-                           <input type="text"  name="nama_hacker" placeholder="masukkan catatan (jika ada)" class="form-control">
-                           <?php echo form_error('nama_hacker','<div class="text-danger small" ml-3>')?>
-                            </td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_start_up,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_start_up,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
-                     
-                     </tr>
-                     <tr>
-                     <th>1.3</th>
-                           <th>MISI PERUSAHAAN</th>
-                           <td><?php echo $d->misi_start_up ?></td>
-                           <td width="30px">
-                           CATATAN
-                           <input type="text"  name="nama_hacker" placeholder="masukkan catatan (jika ada)" class="form-control">
-                           <?php echo form_error('nama_hacker','<div class="text-danger small" ml-3>')?>
-                            </td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_start_up,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_start_up,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
-                     
-                     </tr>
-                     <tr>
-                     <th>1.4</th>
-                           <th>STRUKTUR ORGANISASI</th>
-                           <td><img src="<?php echo base_url().'assets/files/'.$d->struktur_start_up?>" style="width:20%;"></td>
-                           <td width="30px">
-                           CATATAN
-                           <input type="text"  name="nama_hacker" placeholder="masukkan catatan (jika ada)" class="form-control">
-                           <?php echo form_error('nama_hacker','<div class="text-danger small" ml-3>')?>
-                            </td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_start_up,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_start_up,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
-                     
-                     </tr>
-                     <tr>
-                     <th>1.5</th>
-                           <th>LOGO PERUSAHAAN</th>
-                           <td><img src="<?php echo base_url().'assets/files/'.$d->logo_start_up?>" style="width:20%;"></td>
-                           <td width="30px">
-                           CATATAN
-                           <input type="text"  name="nama_hacker" placeholder="masukkan catatan (jika ada)" class="form-control">
-                           <?php echo form_error('nama_hacker','<div class="text-danger small" ml-3>')?>
-                            </td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_start_up,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_start_up,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
-                     
-                     </tr>
-                     <tr>
-                     <th>1.6</th>
-                           <th>TAGLINE PERUSAHAAN</th>
-                           <td><?php echo strtoupper ($d->tagline_start_up) ?></td>
-                           <td width="30px">
-                           CATATAN
-                           <input type="text"  name="nama_hacker" placeholder="masukkan catatan (jika ada)" class="form-control">
-                           <?php echo form_error('nama_hacker','<div class="text-danger small" ml-3>')?>
-                            </td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_start_up,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_start_up,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
-                     
-                     </tr>
-                    
-               
+                   <!-- nama perusahaan -->
+                   <div class="row">
+                        <div class="col-md-7 form-group mb-3">
+                        <label><h4>1.1 NAMA PERUSAHAAN</h4></label>
+                        <input type="text" class="form-control" id="nama_start_up" name="nama_start_up" value="<?php echo strtoupper ($su->nama_start_up); ?>" disabled> 
+                        </div>
+                        
+                        <div class="col-md-2 form-group mb-3">
+                        <label><h6>STATUS</h6></label>
+                        <input type="text" class="form-control" id="status_nama_su" name="status_nama_su" value="<?php echo ($su->status_nama_su); ?>" disabled> 
+                       </div>
+                       <div class="col-md-3 form-group mb-3">
+                       <label for="textarea"><h6>CATATAN</h6></label>
+                        <textarea type="text" rows="1" name="catnama_su" class="form-control" disabled> <?php echo $su->catnama_su?></textarea>
+                        </div>
+                        </div>
+
+                  <!-- visi perusahaan -->
+                  <div class="row">
+                        <div class="col-md-7 form-group mb-3">
+                        <label for="textarea"><h4>1.2 VISI START UP</h4></label>
+                        <textarea id="content7" type="text" rows="7" name="visi_start_up" class="form-control" disabled> <?php echo $su->visi_start_up ?></textarea>
+                        </div>
+                       
+                        <div class="col-md-2 form-group mb-3">
+                        <label><h6>STATUS</h6></label>
+                        <input type="text" class="form-control" id="status_visi_su" name="status_visi_su" value="<?php echo ($su->status_visi_su); ?>" disabled> 
+                       </div>
+                       <div class="col-md-3 form-group mb-3">
+                       <label for="textarea"><h6>CATATAN</h6></label>
+                        <textarea type="text" rows="7" name="catvisi_su" class="form-control" disabled> <?php echo $su->catvisi_su?></textarea>
+                        </div>
+                        </div>
+
+
+                  <!-- misi perusahaan -->
+                  <div class="row">
+                        <div class="col-md-7 form-group mb-3">
+                        <label for="textarea"><h4>1.3 MISI START UP</h4></label>
+                        <textarea id="content8" type="text" rows="7" name="misi_start_up" class="form-control" disabled> <?php echo $su->misi_start_up ?></textarea>
+                        </div>
+                       
+                        <div class="col-md-2 form-group mb-3">
+                        <label><h6>STATUS</h6></label>
+                        <input type="text" class="form-control" id="status_misi_su" name="status_misi_su" value="<?php echo ($su->status_misi_su); ?>" disabled> 
+                       </div>
+                       <div class="col-md-3 form-group mb-3">
+                       <label for="textarea"><h6>CATATAN</h6></label>
+                        <textarea type="text" rows="7" name="catmisi_su" class="form-control" disabled> <?php echo $su->catmisi_su?></textarea>
+                        </div>
+                        </div>
+
+
+                      <!-- struktur perusahaan -->
+                        <div class="row">
+                        <div class="col-md-7 form-group mb-3">
+                        <label><h4>1.4 STRUKTUR ORGANISASI</h4></label>
+                        <br>
+                        <img src="<?php echo base_url().'assets/files/'.$su->struktur_start_up?>" class="img-thumbnail" width="450px"></div>
+                        <div class="col-md-2 form-group mb-3">
+                        <label><h6>STATUS</h6></label>
+                        <input type="text" class="form-control" id="status_struktur_su" name="status_struktur_su" value="<?php echo ($su->status_struktur_su); ?>" disabled> 
+                       </div>
+                       <div class="col-md-3 form-group mb-3">
+                       <label for="textarea"><h6>CATATAN</h6></label>
+                        <textarea type="text" rows="1" name="catstruktur_su" class="form-control" disabled> <?php echo $su->catstruktur_su?></textarea>
+                        </div>
+                        </div>
+ 
+                     <!-- logo perusahaan -->
+                     <div class="row">
+                        <div class="col-md-7 form-group mb-3">
+                        <label><h4>1.5 LOGO PERUSAHAAN</h4></label>
+                        <br>
+                        <img src="<?php echo base_url().'assets/files/'.$su->logo_start_up?>" class="img-thumbnail" width="450px"></div>
+                        <div class="col-md-2 form-group mb-3">
+                        <label><h6>STATUS</h6></label>
+                        <input type="text" class="form-control" id="status_logo_su" name="status_logo_su" value="<?php echo ($su->status_logo_su); ?>" disabled> 
+                       </div>
+                       <div class="col-md-3 form-group mb-3">
+                       <label for="textarea"><h6>CATATAN</h6></label>
+                        <textarea type="text" rows="1" name="catlogo_su" class="form-control" disabled> <?php echo $su->catlogo_su?></textarea>
+                        </div>
+                        </div>
+
+
+                    <!-- tagline perusahaan -->
+                    <div class="row">
+                        <div class="col-md-7 form-group mb-3">
+                        <label><h4>1.6 TAGLINE PERUSAHAAN</h4></label>
+                        <input type="text" class="form-control" id="tagline_start_up" name="tagline_start_up" value="<?php echo strtoupper ($su->tagline_start_up); ?>" disabled> 
+                        </div>
+                        <div class="col-md-2 form-group mb-3">
+                        <label><h6>STATUS</h6></label>
+                        <input type="text" class="form-control" id="status_tagline_su" name="status_tagline_su" value="<?php echo ($su->status_tagline_su); ?>" disabled> 
+                       </div>
+                       <div class="col-md-3 form-group mb-3">
+                       <label for="textarea"><h6>CATATAN</h6></label>
+                        <textarea type="text" rows="1" name="cattagline_su" class="form-control" disabled> <?php echo $su->cattagline_su?></textarea>
+                        </div>
+                        </div>
+
+                  
 
 
                 <?php endforeach; ?>
@@ -224,9 +137,15 @@
                      
                   </div>
                  
-                     
+                 
                </div>
-               
+               <script>
+                // Replace the <textarea id="editor1"> with a CKEditor 4
+                // instance, using default configuration.
+                CKEDITOR.replace( 'content7' );
+                CKEDITOR.replace( 'content8' );
+                
+            </script>
             </div>
          </div>
       </div>

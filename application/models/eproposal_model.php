@@ -17,7 +17,7 @@
         $query = $this->db->get('');
         return $query->result();
     }
-
+ 
       
        
           public function input_data(){

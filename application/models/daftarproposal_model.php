@@ -3,7 +3,7 @@
 class DaftarProposal_model extends CI_Model{
 
   
-
+ 
     public function getJoin()
     {
         $this->db->select('*');
@@ -86,7 +86,7 @@ class DaftarProposal_model extends CI_Model{
  
         $query = $this->db->get('');
         return $query->result();
-    }
+    } 
 
     public function detailpro5($id_proposal)
     {
@@ -100,9 +100,131 @@ class DaftarProposal_model extends CI_Model{
         $this->db->where('id_proposal', $id);
        
  
-        $query = $this->db->get('');
+        $query = $this->db->get(''); 
         return $query->result();
     }
+
+
+    public function verifikasib1($id_proposal)
+    {
+        $this->input->post('id_proposal');
+     //   $this->input->post('nama_start_up');
+        $this->input->post('status_nama_su');
+        $this->input->post('catnama_su');
+     //   $this->input->post('visi_start_up');
+        $this->input->post('status_visi_su');
+        $this->input->post('catvisi_su');
+     //   $this->input->post('misi_start_up');
+        $this->input->post('status_misi_su');
+        $this->input->post('catmisi_su');
+     //   $this->input->post('struktur_start_up');
+        $this->input->post('status_struktur_su');
+        $this->input->post('catstruktur_su');
+     //   $this->input->post('logo_start_up');
+        $this->input->post('status_logo_su');
+        $this->input->post('catlogo_su');
+     //   $this->input->post('tagline_start_up');
+        $this->input->post('status_tagline_su');
+        $this->input->post('cattagline_su');
+
+        $data = [ 
+            'id_proposal' => $id_proposal,
+            //'nama_start_up' => $nama_start_up,
+            'status_nama_su' => $status_nama_su,
+            'catnama_su' => $catnama_su,
+           // 'visi_start_up' => $visi_start_up,
+            'status_visi_su' => $status_visi_su,
+            'catvisi_su' => $catvisi_su,
+          //  'misi_start_up' => $misi_start_up,
+            'status_misi_su' => $status_misi_su,
+            'catmisi_su' => $catmisi_su,
+          //  'struktur_start_up' => $struktur_start_up,
+            'status_struktur_su' => $status_struktur_su,
+            'catstruktur_su' => $catstruktur_su,
+          //  'logo_start_up' => $logo_start_up,
+            'status_logo_su' => $status_logo_su,
+            'catlogo_su' => $catlogo_su,
+          //  'tagline_start_up' => $tagline_start_up,
+            'status_tagline_su' => $status_tagline_su,
+            'cattagline_su' => $cattagline_su,
+            
+        ];
+
+        $this->db->where('id_proposal', $id_proposal);
+        $this->db->update('tb_start_up', $data);
+
+      }
+
+      public function getIdVerif1($id_proposal) //mengambil 1 
+    {
+        $query = $this->db->get_where('tb_start_up', [
+            'id_proposal' => $id_proposal
+        ]);
+        return $query;
+    }
+
+
+    public function verifikasib5($id_proposal)
+    {
+        $this->input->post('id_proposal');
+        $this->input->post('status_cust_plan');
+        $this->input->post('catcust_plan');
+        $this->input->post('status_value_plan');
+        $this->input->post('catvalue_plan');
+        $this->input->post('status_channels_plan');
+        $this->input->post('catchannels_plan');
+        $this->input->post('status_relation_plan');
+        $this->input->post('catrelation_plan');
+        $this->input->post('status_keyact_plan');
+        $this->input->post('catkeyact_plan');
+        $this->input->post('status_keyres_plan');
+        $this->input->post('catkeyres_plan');
+        $this->input->post('status_keypart_plan');
+        $this->input->post('catkeypart_plan');
+        $this->input->post('status_cost_plan');
+        $this->input->post('catcost_plan');
+        $this->input->post('status_revenue_plan');
+        $this->input->post('catrevenue_plan');
+
+        $data = [ 
+            'id_proposal' => $id_proposal,
+            'status_cust_plan' => $status_cust_plan,
+            'catcust_plan' => $catcust_plan,
+            'status_value_plan' => $status_value_plan,
+            'catvalue_plan' => $catvalue_plan,
+            'status_channels_plan' => $status_channels_plan,
+            'catchannels_plan' => $catchannels_plan,
+            'status_relation_plan' => $status_relation_plan,
+            'catrelation_plan' => $catrelation_plan,
+            'status_keyact_plan' => $status_keyact_plan,
+            'catkeyact_plan' => $catkeyact_plan,
+            'status_keyres_plan' => $status_keyres_plan,
+            'catkeyres_plan' => $catkeyres_plan,
+            'status_keypart_plan' => $status_keypart_plan,
+            'catkeypart_plan' => $catkeypart_plan,
+            'status_cost_plan' => $status_cost_plan,
+            'catcost_plan' => $catcost_plan,
+            'status_revenue_plan' => $status_revenue_plan,
+            'catrevenue_plan' => $catrevenue_plan,
+
+            
+        ];
+
+        $this->db->where('id_proposal', $id_proposal);
+        $this->db->update('tb_plan', $data);
+
+      }
+
+      public function getIdVerif5($id_proposal) //mengambil 1 
+    {
+        $query = $this->db->get_where('tb_plan', [
+            'id_proposal' => $id_proposal
+        ]);
+        return $query;
+    }
+
+
+
 
 
    

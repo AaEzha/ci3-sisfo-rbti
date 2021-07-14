@@ -32,7 +32,7 @@
    <!-- body -->
    <body class="main-layout">
       <!-- loader  -->
-   
+      <script src="<?php echo base_url()?>assets/vendor/ckeditor/ckeditor.js"></script>
       <!-- end loader -->
       <!-- top -->
                     <!-- header -->
@@ -50,17 +50,15 @@
                         <a href="index.html"></a>
                      </div>
                   </div>
-                  <div class="col-lg-10 offset-lg-1 col-md-12 col-sm-9">
+                  <div class="col-lg-10 offset-lg-3 col-md-12 col-sm-9">
                      <div class="navbar-area">
                         <nav class="site-navbar">
                         <ul>
-                        <li></li>
-                        <li></li>
+                       
                               <li><a href="<?php echo base_url('/dosen/dashboard')?>">Home</a></li>
                               <li><a href="<?php echo base_url('/dosen/daftarmahasiswa')?>">Daftar Mahasiswa</a></li>
                               <li><a class="active" href="<?php echo base_url('/dosen/daftarproposal')?>">Daftar E-Proposal</a></li>
-                              <li><a href="doctores.html">Profil</a></li>
-                           </ul>
+                         </ul>
                            <button class="nav-toggler">
                            <span></span>
                            </button>

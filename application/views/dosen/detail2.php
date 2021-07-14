@@ -1,72 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-   <head>
-      <!-- basic -->
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <!-- mobile metas -->
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-      <!-- site metas -->
-      <title>E-Proposal RBTI</title>
-      <meta name="keywords" content="">
-      <meta name="description" content="">
-      <meta name="author" content="">
-      <!-- bootstrap css -->
-      <link rel="stylesheet" href="<?php echo base_url()?>assets/css/bootstrap.min.css">
-      <!-- style css -->
-      <link rel="stylesheet" href="<?php echo base_url()?>assets/css/style.css">
-      <!-- Responsive-->
-      <link rel="stylesheet" href="<?php echo base_url()?>assets/css/responsive.css">
-      <!-- fevicon -->
-      <link rel="icon" href="<?php echo base_url()?>assets/images/fevicon.png" type="image/gif" />
-      <!-- Scrollbar Custom CSS -->
-      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-       <link rel="stylesheet" href="<?php echo base_url()?>assets/css/owl.carousel.min.css"> 
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-      <link rel="stylesheet" href="https://rawgit.com/LeshikJanz/libraries/master/Bootstrap/baguetteBox.min.css">
-      <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
-   </head>
-   <!-- body -->
-   <body class="main-layout">
-      <!-- end loader -->
-      <!-- top -->
-                    <!-- header -->
-         <header class="header-area">
-            <div class="left">
-               <a href="Javascript:void(0)"><i class="fa fa-search" aria-hidden="true"></i></a>
-            </div>
-            <div class="right">
-            <a href="<?php echo base_url('welcome/logout')?>"><i class="fa fa-sign-out" aria-hidden="true"></i>logout</a>
-            </div>
-            <div class="container">
-               <div class="row d_flex">
-                  <div class="col-sm-3 logo_sm">
-                     <div class="logo">
-                        <a href="index.html"></a>
-                     </div>
-                  </div>
-                  <div class="col-lg-19 offset-lg-2 col-md-12 col-sm-9">
-                     <div class="navbar-area">
-                        <nav class="site-navbar">
-                           <ul>
-                              <li><a href="<?php echo base_url('/dosen/dashboard')?>">Home</a></li>
-                              <li><a href="<?php echo base_url('/dosen/daftarmahasiswa')?>">Daftar Mahasiswa</a></li>
-                              <li><a class="active" href="<?php echo base_url('/dosen/daftarproposal')?>">Daftar E-Proposal</a></li>
-                              <li><a href="doctores.html">Profil</a></li>
-                           </ul>
-                           <button class="nav-toggler">
-                           <span></span>
-                           </button>
-                        </nav>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </header> 
-      <!-- end header -->
+
    
 <!-- cases -->
 <div class="cases">
@@ -83,193 +15,289 @@
             <div class="row d_flex" >
                <div class=" col-md-12" >
                   <div class="latest text_align_center" >
-                  <table class="table table-bordered table-stripped table-hover" >
-                  <?php $no=1; foreach($detailpro2 as $d) :  ?>
-                    
-                    <tr>
+                  <?php $no=1; foreach($detailpro2 as $bt) :  ?>
 
-                    <tr>
-                    <th>2.1</th>
-                           <th>NAMA HUSTLER</th>
-                           <td><?php echo strtoupper ($d->nama_hustler); ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_biodatatim,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_biodatatim,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
-                     
-                     
-                     </tr>
-                     <tr>
-                     <th>2.2</th>
-                           <th>ALAMAT HUSTLER</th>
-                           <td><?php echo $d->alamat_hustler ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_biodatatim,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_biodatatim,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
-                     
-                     
+                  <div class="alert alert-danger col-md-12" role="alert">
+                  <i class="fas fa-user-friends"></i><h3>A. Hustler</h3></div>
 
-                     </tr>
-                     <tr>
-                     <th>2.3</th>
-                           <th>TELP HUSTLER</th>
-                           <td><?php echo $d->telp_hustler ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_biodatatim,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_biodatatim,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
-                     
+                  <!-- nama hustler -->
+                  <div class="row">
+                  <div class="col-md-7 form-group mb-3">
+                  <label><h4>2.1 NAMA HUSTLER</h4></label>
+                  <input type="text" class="form-control" id="nama_hustler" name="nama_hustler" value="<?php echo strtoupper ($bt->nama_hustler); ?>" disabled> 
+                  </div>
+                 
+                  <div class="col-md-2 form-group mb-3">
+                  <label><h6>STATUS</h6></label>
+                  <input type="text" class="form-control" id="status_nama_hustler" name="status_nama_hustler" value="<?php echo ($bt->status_nama_hustler); ?>" disabled> 
+                  </div>
+                  <div class="col-md-3 form-group mb-3">
+                  <label for="textarea"><h6>CATATAN</h6></label>
+                  <textarea type="text" rows="1" name="catnama_hustler" class="form-control" disabled> <?php echo $bt->catnama_hustler?></textarea>
+                  </div>
+                  </div>
 
-                     </tr>
-                     <tr>
-                     <th>2.4</th>
-                           <th>EMAIL HUSTLER</th>
-                           <td><?php echo $d->email_hustler ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_biodatatim,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_biodatatim,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
-                     
-                     
-
-                     </tr>
-                     <tr>
-                     <th>2.5</th>
-                           <th>TUGAS HUSTLER</th>
-                           <td><?php echo $d->tugas_hustler ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_biodatatim,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_biodatatim,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
-                     
-                     
-
-                     </tr>
-                     <tr>
-                     <th>2.6</th>
-                           <th>NAMA HIPSTER</th>
-                           <td><?php echo strtoupper ($d->nama_hipster); ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_biodatatim,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_biodatatim,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
-                     
-
-                     </tr>
-                     <tr>
-                     <th>2.7</th>
-                           <th> ALAMAT HIPSTER</th>
-                           <td><?php echo $d->alamat_hipster ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_biodatatim,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_biodatatim,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
-                     
-                     
-
-                     </tr>
-                     <tr>
-                     <th>2.8</th>
-                           <th>TELP HIPSTER</th>
-                           <td><?php echo $d->telp_hipster ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_biodatatim,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_biodatatim,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
-                     
-                     
-
-                     </tr>
-                     <tr>
-                     <th>2.9</th>
-                           <th>EMAIL HIPSTER</th>
-                           <td><?php echo $d->email_hipster ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_biodatatim,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_biodatatim,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
-                     
-                     
-
-                     </tr>
-                     <tr>
-                     <th>2.10</th>
-                           <th>TUGAS HIPSTER</th>
-                           <td><?php echo $d->tugas_hipster ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_biodatatim,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_biodatatim,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
-                     
-                     
-
-                     </tr>
-                     <tr>
-                     <th>2.11</th>
-                           <th>NAMA HACKER</th>
-                           <td><?php echo strtoupper ($d->nama_hacker); ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_biodatatim,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_biodatatim,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
-                     
-                     
-
-                     </tr>
-                     <tr>
-                     <th>2.12</th>
-                           <th>ALAMAT HACKER</th>
-                           <td><?php echo $d->alamat_hacker ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_biodatatim,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_biodatatim,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
-                     
-                     
-
-                     </tr>
-                     <tr>
-                     <th>2.13</th>
-                           <th>TELP HACKER</th>
-                           <td><?php echo $d->telp_hacker ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_biodatatim,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_biodatatim,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
-                     
-                     
-
-                     </tr>
-                     <tr>
-                     <th>2.14</th>
-                           <th>EMAIL HACKER</th>
-                           <td><?php echo $d->email_hacker ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_biodatatim,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_biodatatim,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
-                     
-                     
-
-                     </tr>
-                     <tr>
-                     <th>2.15</th>
-                           <th>TUGAS HACKER</th>
-                           <td><?php echo $d->tugas_hacker ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_biodatatim,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_biodatatim,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
-                     
-
-                     </tr>
-                    
-                      
-                       
+                  <!-- alamat hustler -->
+                  <div class="row">
+                  <div class="col-md-7 form-group mb-3">
+                  <label for="textarea"><h4>2.2 ALAMAT HUSTLER</h4></label>
+                  <textarea id="content1" type="text" rows="5" name="alamat_hustler" class="form-control" disabled> <?php echo $bt->alamat_hustler?></textarea>
+                  </div>
+                 
+                  <div class="col-md-2 form-group mb-3">
+                  <label><h6>STATUS</h6></label>
+                  <input type="text" class="form-control" id="status_alamat_hustler" name="status_alamat_hustler" value="<?php echo ($bt->status_alamat_hustler); ?>" disabled> 
+                  </div>
+                  <div class="col-md-3 form-group mb-3">
+                  <label for="textarea"><h6>CATATAN</h6></label>
+                  <textarea type="text" rows="5" name="catalamat_hustler" class="form-control" disabled> <?php echo $bt->catalamat_hustler?></textarea>
+                  </div>
+                  </div>
 
 
-                <?php endforeach; ?>
+                  <!-- telp  hustler -->
+                  <div class="row">
+                  <div class="col-md-7 form-group mb-3">
+                  <label><h4>2.3 TELPON HUSTLER</h4></label>
+                  <input type="text" class="form-control" id="telp_hustler" name="telp_hustler" value="<?php echo $bt->telp_hustler ?>" disabled> 
+                  </div>
+                 
+                  <div class="col-md-2 form-group mb-3">
+                  <label><h6>STATUS</h6></label>
+                  <input type="text" class="form-control" id="status_telp_hustler" name="status_telp_hustler" value="<?php echo ($bt->status_telp_hustler); ?>" disabled> 
+                  </div>
+                  <div class="col-md-3 form-group mb-3">
+                  <label for="textarea"><h6>CATATAN</h6></label>
+                  <textarea type="text" rows="1" name="cattelp_hustler" class="form-control" disabled> <?php echo $bt->cattelp_hustler?></textarea>
+                  </div>
+                  </div>
+
+
+                  <!-- email hustler -->
+                  <div class="row"><div class="col-md-7 form-group mb-3">
+                  <label><h4>2.4 EMAIL HUSTLER</h4></label>
+                  <input type="text" class="form-control" id="email_hustler" name="email_hustler" value="<?php echo $bt->email_hustler ?>" disabled> 
+                  </div>
+                 
+                  <div class="col-md-2 form-group mb-3">
+                  <label><h6>STATUS</h6></label>
+                  <input type="text" class="form-control" id="status_email_hustler" name="status_email_hustler" value="<?php echo ($bt->status_email_hustler); ?>" disabled> 
+                  </div>
+                  <div class="col-md-3 form-group mb-3">
+                  <label for="textarea"><h6>CATATAN</h6></label>
+                  <textarea type="text" rows="1" name="catemail_hustler" class="form-control" disabled> <?php echo $bt->catemail_hustler?></textarea>
+                  </div>
+                  </div>
+
+
+                  <!-- tugas hustler -->
+                  <div class="row">
+                  <div class="col-md-7 form-group mb-3">
+                  <label for="textarea"><h4>2.5 TUGAS HUSTLER</h4></label>
+                  <textarea id="content2" type="text" rows="5" name="tugas_hustler" class="form-control" disabled> <?php echo $bt->tugas_hustler?></textarea>
+                  </div>
+                 
+                  <div class="col-md-2 form-group mb-3">
+                  <label><h6>STATUS</h6></label>
+                  <input type="text" class="form-control" id="status_tugas_hustler" name="status_tugas_hustler" value="<?php echo ($bt->status_tugas_hustler); ?>" disabled> 
+                  </div>
+                  <div class="col-md-3 form-group mb-3">
+                  <label for="textarea"><h6>CATATAN</h6></label>
+                  <textarea type="text" rows="5" name="cattugas_hustler" class="form-control" disabled> <?php echo $bt->cattugas_hustler?></textarea>
+                  </div>
+                  </div>
+
+
+
+                  <!--hipster -->
+                  <div class="alert alert-danger col-md-12" role="alert">
+                  <i class="fas fa-user-friends"></i><h3>B. Hipster</h3></div>
+                  <br>
+
+                  <!-- nama hipster -->
+                  <div class="row">
+                  <div class="col-md-7 form-group mb-3">
+                  <label><h4>2.6 NAMA HIPSTER</h4></label>
+                  <input type="text" class="form-control" id="nama_hipster" name="nama_hipster" value="<?php echo strtoupper ($bt->nama_hipster); ?>" disabled> 
+                  </div>
+                 
+                  <div class="col-md-2 form-group mb-3">
+                  <label><h6>STATUS</h6></label>
+                  <input type="text" class="form-control" id="status_nama_hipster" name="status_nama_hipster" value="<?php echo ($bt->status_nama_hipster); ?>" disabled> 
+                  </div>
+                  <div class="col-md-3 form-group mb-3">
+                  <label for="textarea"><h6>CATATAN</h6></label>
+                  <textarea type="text" rows="1" name="catnama_hipster" class="form-control" disabled> <?php echo $bt->catnama_hipster?></textarea>
+                  </div>
+                  </div>
+
+                  <!-- alamat hipster -->
+                  <div class="row">
+                  <div class="col-md-7 form-group mb-3">
+                  <label for="textarea"><h4>2.7 ALAMAT HIPSTER</h4></label>
+                  <textarea id="content3" type="text" rows="5" name="alamat_hipster" class="form-control" disabled> <?php echo $bt->alamat_hipster?></textarea>
+                  </div>
+                 
+                  <div class="col-md-2 form-group mb-3">
+                  <label><h6>STATUS</h6></label>
+                  <input type="text" class="form-control" id="status_alamat_hipster" name="status_alamat_hipster" value="<?php echo ($bt->status_alamat_hipster); ?>" disabled> 
+                  </div>
+                  <div class="col-md-3 form-group mb-3">
+                  <label for="textarea"><h6>CATATAN</h6></label>
+                  <textarea type="text" rows="5" name="catalamat_hipster" class="form-control" disabled> <?php echo $bt->catalamat_hipster?></textarea>
+                  </div>
+                  </div>
+
+
+                  <!-- telp  hipster -->
+                  <div class="row">
+                  <div class="col-md-7 form-group mb-3">
+                  <label><h4>2.8 TELPON HIPSTER</h4></label>
+                  <input type="text" class="form-control" id="telp_hipster" name="telp_hipster" value="<?php echo $bt->telp_hipster ?>" disabled> 
+                  </div>
+                 
+                  <div class="col-md-2 form-group mb-3">
+                  <label><h6>STATUS</h6></label>
+                  <input type="text" class="form-control" id="status_telp_hipster" name="status_telp_hipster" value="<?php echo ($bt->status_telp_hipster); ?>" disabled> 
+                  </div>
+                  <div class="col-md-3 form-group mb-3">
+                  <label for="textarea"><h6>CATATAN</h6></label>
+                  <textarea type="text" rows="1" name="cattelp_hipster" class="form-control" disabled> <?php echo $bt->cattelp_hipster?></textarea>
+                  </div>
+                  </div>
+
+
+                  <!-- email hipster -->
+                  <div class="row"><div class="col-md-7 form-group mb-3">
+                  <label><h4>2.9 EMAIL HIPSTER</h4></label>
+                  <input type="text" class="form-control" id="email_hipster" name="email_hipster" value="<?php echo $bt->email_hipster ?>" disabled> 
+                  </div>
+                  
+                  <div class="col-md-2 form-group mb-3">
+                  <label><h6>STATUS</h6></label>
+                  <input type="text" class="form-control" id="status_email_hipster" name="status_email_hipster" value="<?php echo ($bt->status_email_hipster); ?>" disabled> 
+                  </div>
+                  <div class="col-md-3 form-group mb-3">
+                  <label for="textarea"><h6>CATATAN</h6></label>
+                  <textarea type="text" rows="1" name="catemail_hipster" class="form-control" disabled> <?php echo $bt->catemail_hipster?></textarea>
+                  </div>
+                  </div>
+
+
+                  <!-- tugas hipster -->
+                  <div class="row">
+                  <div class="col-md-7 form-group mb-3">
+                  <label for="textarea"><h4>2.10 TUGAS HIPSTER</h4></label>
+                  <textarea id="content4" type="text" rows="5" name="tugas_hipster" class="form-control" disabled> <?php echo $bt->tugas_hipster?></textarea>
+                  </div>
+                  
+                  <div class="col-md-2 form-group mb-3">
+                  <label><h6>STATUS</h6></label>
+                  <input type="text" class="form-control" id="status_tugas_hipster" name="status_tugas_hipster" value="<?php echo ($bt->status_tugas_hipster); ?>" disabled> 
+                  </div>
+                  <div class="col-md-3 form-group mb-3">
+                  <label for="textarea"><h6>CATATAN</h6></label>
+                  <textarea type="text" rows="5" name="cattugas_hipster" class="form-control" disabled> <?php echo $bt->cattugas_hipster?></textarea>
+                  </div>
+                  </div>
+
+
+                  <!-- tugas hacker -->
+                  <div class="alert alert-danger col-md-12" role="alert">
+                  <i class="fas fa-user-friends"></i><h3>C. Hacker</h3></div>
+                  <br>
+
+                  <!-- nama hacker -->
+                  <div class="row">
+                  <div class="col-md-7 form-group mb-3">
+                  <label><h4>2.11 NAMA HACKER</h4></label>
+                  <input type="text" class="form-control" id="nama_hacker" name="nama_hacker" value="<?php echo strtoupper ($bt->nama_hacker); ?>" disabled> 
+                  </div>
+                  
+                  <div class="col-md-2 form-group mb-3">
+                  <label><h6>STATUS</h6></label>
+                  <input type="text" class="form-control" id="status_nama_hacker" name="status_nama_hacker" value="<?php echo ($bt->status_nama_hacker); ?>" disabled> 
+                  </div>
+                  <div class="col-md-3 form-group mb-3">
+                  <label for="textarea"><h6>CATATAN</h6></label>
+                  <textarea type="text" rows="1" name="catnama_hacker" class="form-control" disabled> <?php echo $bt->catnama_hacker?></textarea>
+                  </div>
+                  </div>
+
+                  <!-- alamat hacker -->
+                  <div class="row">
+                  <div class="col-md-7 form-group mb-3">
+                  <label for="textarea"><h4>2.12 ALAMAT HACKER</h4></label>
+                  <textarea id="content5" type="text" rows="5" name="alamat_hacker" class="form-control" disabled> <?php echo $bt->alamat_hacker?></textarea>
+                  </div>
+                  
+                  <div class="col-md-2 form-group mb-3">
+                  <label><h6>STATUS</h6></label>
+                  <input type="text" class="form-control" id="status_alamat_hacker" name="status_alamat_hacker" value="<?php echo ($bt->status_alamat_hacker); ?>" disabled> 
+                  </div>
+                  <div class="col-md-3 form-group mb-3">
+                  <label for="textarea"><h6>CATATAN</h6></label>
+                  <textarea type="text" rows="5" name="catalamat_hacker" class="form-control" disabled> <?php echo $bt->catalamat_hacker?></textarea>
+                  </div>
+                  </div>
+
+
+                  <!-- telp  hacker -->
+                  <div class="row">
+                  <div class="col-md-7 form-group mb-3">
+                  <label><h4>2.13 TELPON HACKER</h4></label>
+                  <input type="text" class="form-control" id="telp_hacker" name="telp_hacker" value="<?php echo $bt->telp_hacker ?>" disabled> 
+                  </div>
+                  
+                  <div class="col-md-2 form-group mb-3">
+                  <label><h6>STATUS</h6></label>
+                  <input type="text" class="form-control" id="status_telp_hacker" name="status_telp_hacker" value="<?php echo ($bt->status_telp_hacker); ?>" disabled> 
+                  </div>
+                  <div class="col-md-3 form-group mb-3">
+                  <label for="textarea"><h6>CATATAN</h6></label>
+                  <textarea type="text" rows="1" name="cattelp_hacker" class="form-control" disabled> <?php echo $bt->cattelp_hacker?></textarea>
+                  </div>
+                  </div>
+
+
+                  <!-- email hacker -->
+                  <div class="row"><div class="col-md-7 form-group mb-3">
+                  <label><h4>2.14 EMAIL HACKER</h4></label>
+                  <input type="text" class="form-control" id="email_hacker" name="email_hacker" value="<?php echo $bt->email_hacker ?>" disabled> 
+                  </div>
+                  
+                  <div class="col-md-2 form-group mb-3">
+                  <label><h6>STATUS</h6></label>
+                  <input type="text" class="form-control" id="status_email_hacker" name="status_email_hacker" value="<?php echo ($bt->status_email_hacker); ?>" disabled> 
+                  </div>
+                  <div class="col-md-3 form-group mb-3">
+                  <label for="textarea"><h6>CATATAN</h6></label>
+                  <textarea type="text" rows="1" name="catemail_hacker" class="form-control" disabled> <?php echo $bt->catemail_hacker?></textarea>
+                  </div>
+                  </div>
+
+
+                  <!-- tugas hacker -->
+                  <div class="row">
+                  <div class="col-md-7 form-group mb-3">
+                  <label for="textarea"><h4>2.15 TUGAS HACKER</h4></label>
+                  <textarea id="content6" type="text" rows="5" name="tugas_hacker" class="form-control" disabled> <?php echo $bt->tugas_hacker?></textarea>
+                  </div>
+                  
+                  <div class="col-md-2 form-group mb-3">
+                  <label><h6>STATUS</h6></label>
+                  <input type="text" class="form-control" id="status_tugas_hacker" name="status_tugas_hacker" value="<?php echo ($bt->status_tugas_hacker); ?>" disabled> 
+                  </div>
+                  <div class="col-md-3 form-group mb-3">
+                  <label for="textarea"><h6>CATATAN</h6></label>
+                  <textarea type="text" rows="5" name="cattugas_hacker" class="form-control" disabled> <?php echo $bt->cattugas_hacker?></textarea>
+                  </div>
+                  </div>
+
+
+
+                  <?php endforeach; ?>
+
 
                   
                      
@@ -280,7 +308,16 @@
                      <br>
                      
                   </div>
-                 
+                  <script>
+                // Replace the <textarea id="editor1"> with a CKEditor 4
+                // instance, using default configuration.
+                CKEDITOR.replace( 'content1' );
+                CKEDITOR.replace( 'content2' );
+                CKEDITOR.replace( 'content3' );
+                CKEDITOR.replace( 'content4' );
+                CKEDITOR.replace( 'content5' );
+                CKEDITOR.replace( 'content6' );
+            </script>
                      
                </div>
                

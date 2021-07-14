@@ -18,7 +18,7 @@
                            <th>JUDUL PROPOSAL</th>
                            <th>TEMA PROPOSAL</th>
                            <th>BAB <br>1</th>
-                           <th>BAB 2</th>
+                           <th>BAB <br> 2</th>
                            <th>BAB 3</th>
                            <th>BAB 4</th>
                            <th>BAB 5</th>

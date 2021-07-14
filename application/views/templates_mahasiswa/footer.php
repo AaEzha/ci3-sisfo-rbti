@@ -64,5 +64,9 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
       <script src="<?php echo base_url()?>assets/js/owl.carousel.min.js"></script>
       <script src="<?php echo base_url()?>assets/js/custom.js"></script>
-   </body>
+      <script> new FroalaEditor('textarea#froala-editor') </script>
+      <script src="js/jquery.min.js"></script>
+      
+      </script>
+      </body>
 </html>

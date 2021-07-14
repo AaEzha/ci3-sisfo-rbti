@@ -1,72 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-   <head>
-      <!-- basic -->
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <!-- mobile metas -->
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-      <!-- site metas -->
-      <title>E-Proposal RBTI</title>
-      <meta name="keywords" content="">
-      <meta name="description" content="">
-      <meta name="author" content="">
-      <!-- bootstrap css -->
-      <link rel="stylesheet" href="<?php echo base_url()?>assets/css/bootstrap.min.css">
-      <!-- style css -->
-      <link rel="stylesheet" href="<?php echo base_url()?>assets/css/style.css">
-      <!-- Responsive-->
-      <link rel="stylesheet" href="<?php echo base_url()?>assets/css/responsive.css">
-      <!-- fevicon -->
-      <link rel="icon" href="<?php echo base_url()?>assets/images/fevicon.png" type="image/gif" />
-      <!-- Scrollbar Custom CSS -->
-      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-       <link rel="stylesheet" href="<?php echo base_url()?>assets/css/owl.carousel.min.css"> 
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-      <link rel="stylesheet" href="https://rawgit.com/LeshikJanz/libraries/master/Bootstrap/baguetteBox.min.css">
-      <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
-   </head>
-   <!-- body -->
-   <body class="main-layout">
-      <!-- end loader -->
-      <!-- top -->
-                    <!-- header -->
-         <header class="header-area">
-            <div class="left">
-               <a href="Javascript:void(0)"><i class="fa fa-search" aria-hidden="true"></i></a>
-            </div>
-            <div class="right">
-            <a href="<?php echo base_url('welcome/logout')?>"><i class="fa fa-sign-out" aria-hidden="true"></i>logout</a>
-            </div>
-            <div class="container">
-               <div class="row d_flex">
-                  <div class="col-sm-3 logo_sm">
-                     <div class="logo">
-                        <a href="index.html"></a>
-                     </div>
-                  </div>
-                  <div class="col-lg-19 offset-lg-2 col-md-12 col-sm-9">
-                     <div class="navbar-area">
-                        <nav class="site-navbar">
-                           <ul>
-                              <li><a href="<?php echo base_url('/dosen/dashboard')?>">Home</a></li>
-                              <li><a href="<?php echo base_url('/dosen/daftarmahasiswa')?>">Daftar Mahasiswa</a></li>
-                              <li><a class="active" href="<?php echo base_url('/dosen/daftarproposal')?>">Daftar E-Proposal</a></li>
-                              <li><a href="doctores.html">Profil</a></li>
-                           </ul>
-                           <button class="nav-toggler">
-                           <span></span>
-                           </button>
-                        </nav>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </header> 
-      <!-- end header -->
+
    
 <!-- cases -->
 <div class="cases">
@@ -83,115 +15,206 @@
             <div class="row d_flex" >
                <div class=" col-md-12" >
                   <div class="latest text_align_center" >
-                  <table class="table table-bordered table-stripped table-hover" >
-                  <?php $no=1; foreach($detailpro5 as $d) :  ?>
+                  <?php $no=1; foreach($detailpro5 as $bp) :  ?>
+                     <?php echo anchor('dosen/daftarproposal/verifikasi5/'.$bp->id_proposal,'<button class="btn btn-sm btn-primary mb-3"></i> Verifikasi </button> ')?>
+                   
+                 
+
                     
-                    <tr>
-                            <th>5.1 </th>
-                           <th>CUSTOMER</th>
-                           <td><?php echo $d->cust_plan ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_plan,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_plan,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
+                   <!-- CUSTOMER -->
+                  <div class="row">
+                        <div class="col-md-7 form-group mb-3">
+                        <label for="textarea"><h4>5.1 CUSTOMER</h4></label>
+                        <textarea id="content22" type="text" rows="7" name="cust_plan" class="form-control" disabled> <?php echo $bp->cust_plan?></textarea>
+                        </div>
+                        
+                        <div class="col-md-2 form-group mb-3">
+                        <label><h6>STATUS</h6></label>
+                        <input type="text" class="form-control" id="status_cust_plan" name="status_cust_plan" value="<?php echo ($bp->status_cust_plan); ?>" disabled> 
+                       </div>
+                       <div class="col-md-3 form-group mb-3">
+                       <label for="textarea"><h6>CATATAN</h6></label>
+                        <textarea type="text" rows="7" name="catcust_plan" class="form-control" disabled> <?php echo $bp->catcust_plan?></textarea>
+                        </div>
+                        </div>
+ 
 
-                           </tr>
-                     <tr>
-                     <th>5.2 </th>
-                           <th>VALUE PROPOSITIONS</th>
-                           <td><?php echo $d->value_plan ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_plan,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_plan,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
+                  <!-- VALUE PROPOSITIONS -->
+                  <div class="row">
+                        <div class="col-md-7 form-group mb-3">
+                        <label for="textarea"><h4>5.2 VALUE PROPOSITIONS</h4></label>
+                        <textarea id="content23" type="text" rows="7" name="value_plan" class="form-control" disabled> <?php echo $bp->value_plan?></textarea>
+                        </div>
+                        
+                        <div class="col-md-2 form-group mb-3">
+                        <label><h6>STATUS</h6></label>
+                        <input type="text" class="form-control" id="status_value_plan" name="status_value_plan" value="<?php echo ($bp->status_value_plan); ?>" disabled> 
+                       </div>
+                       <div class="col-md-3 form-group mb-3">
+                       <label for="textarea"><h6>CATATAN</h6></label>
+                        <textarea type="text" rows="7" name="catvalue_plan" class="form-control" disabled> <?php echo $bp->catvalue_plan?></textarea>
+                        </div>
+                        </div>
 
-                           </tr>
-                     <tr>
-                     <th>5.3 </th>
-                           <th>CHANNELS</th>
-                           <td><?php echo $d->channels_plan ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_plan,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_plan,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
 
-                           </tr>
-                     <tr>
-                     <th>5.4 </th>
-                           <th>RELATIONSHIPS</th>
-                           <td><?php echo $d->relation_plan ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_plan,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_plan,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
+                  <!-- CHANNELS -->
+                  <div class="row">
+                        <div class="col-md-7 form-group mb-3">
+                        <label for="textarea"><h4>5.3 CHANNELS</h4></label>
+                        <textarea id="content24" type="text" rows="7" name="channels_plan" class="form-control" disabled> <?php echo $bp->channels_plan?></textarea>
+                        </div>
+                      
+                        
+                        <div class="col-md-2 form-group mb-3">
+                        <label><h6>STATUS</h6></label>
+                        <input type="text" class="form-control" id="status_channels_plan" name="status_channels_plan" value="<?php echo ($bp->status_channels_plan); ?>" disabled> 
+                       </div>
+                       <div class="col-md-3 form-group mb-3">
+                       <label for="textarea"><h6>CATATAN</h6></label>
+                        <textarea type="text" rows="7" name="catchannels_plan" class="form-control" disabled> <?php echo $bp->catchannels_plan?></textarea>
+                        </div>
+                        </div>
 
-                           </tr>
-                     <tr>
-                     <th>5.5 </th>
-                           <th>KEY ACTIVITIES</th>
-                           <td><?php echo $d->key_act_plan ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_plan,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_plan,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
+                  <!--RELATIONSHIPS -->
+                  <div class="row">
+                        <div class="col-md-7 form-group mb-3">
+                        <label for="textarea"><h4>5.4 RELATIONSHIPS</h4></label>
+                        <textarea id="content25" type="text" rows="7" name="relation_plan" class="form-control" disabled> <?php echo $bp->relation_plan?></textarea>
+                        </div>
+                        
+                        
+                        <div class="col-md-2 form-group mb-3">
+                        <label><h6>STATUS</h6></label>
+                        <input type="text" class="form-control" id="status_relation_plan" name="status_relation_plan" value="<?php echo ($bp->status_relation_plan); ?>" disabled> 
+                       </div>
+                       <div class="col-md-3 form-group mb-3">
+                       <label for="textarea"><h6>CATATAN</h6></label>
+                        <textarea type="text" rows="7" name="catrelation_plan" class="form-control" disabled> <?php echo $bp->catrelation_plan?></textarea>
+                        </div>
+                        </div>
 
-                           </tr>
-                     <tr>
-                     <th>5.6 </th>
-                           <th>KEY RESOURCE</th>
-                           <td><?php echo $d->key_res_plan ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_plan,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_plan,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
 
-                           </tr>
-                     <tr>
-                     <th>5.7 </th>
-                           <th>KEY PARTNERS</th>
-                           <td><?php echo $d->key_partner_plan ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_plan,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_plan,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
-
-                           </tr>
-                     <tr>
-                     <th>5.8 </th>
-                           <th>COST STRUCTURE</th>
-                           <td><?php echo $d->cost_plan ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_plan,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_plan,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
-
-                           </tr>
-                     <tr>
-                     <th>5.9 </th>
-                           <th>REVENUE STREAMS</th>
-                           <td><?php echo $d->revenue_plan ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/verifikasi/'.$d->id_plan,'<div class="btn btn=sm btn-primary">
-                           <i class="fa fa-eye"></i></div>') ?></td>
-                           <td width="10px"><?php echo anchor('dosen/daftarproposal/komen/'.$d->id_plan,'<div class="btn btn=sm btn-success">
-                           <i class="fa fa-comment"></i></div>')?></td>
-                     </tr>
-                            
-                     
-
-                     
-
-                <?php endforeach; ?>
+                   <!--KEY ACTIVITIES -->
+                   <div class="row">
+                        <div class="col-md-7 form-group mb-3">
+                        <label for="textarea"><h4>5.5 KEY ACTIVITIES</h4></label>
+                        <textarea id="content26" type="text" rows="7" name="key_act_plan" class="form-control" disabled> <?php echo $bp->key_act_plan?></textarea>
+                        </div>
+                       
+                        
+                        <div class="col-md-2 form-group mb-3">
+                        <label><h6>STATUS</h6></label>
+                        <input type="text" class="form-control" id="status_keyact_plan" name="status_keyact_plan" value="<?php echo ($bp->status_keyact_plan); ?>" disabled> 
+                       </div>
+                       <div class="col-md-3 form-group mb-3">
+                       <label for="textarea"><h6>CATATAN</h6></label>
+                        <textarea type="text" rows="7" name="catkeyact_plan" class="form-control" disabled> <?php echo $bp->catkeyact_plan?></textarea>
+                        </div>
+                        </div>
 
                   
-                     
-                     </table>
+                  <!--KEY RESOURCE -->
+                  <div class="row">
+                        <div class="col-md-7 form-group mb-3">
+                        <label for="textarea"><h4>5.6 KEY RESOURCE</h4></label>
+                        <textarea id="content27"  type="text" rows="7" name="key_res_plan" class="form-control" disabled> <?php echo $bp->key_res_plan?></textarea>
+                        </div>
+                       
+                        
+                        <div class="col-md-2 form-group mb-3">
+                        <label><h6>STATUS</h6></label>
+                        <input type="text" class="form-control" id="status_keyres_plan" name="status_keyres_plan" value="<?php echo ($bp->status_keyres_plan); ?>" disabled> 
+                       </div>
+                       <div class="col-md-3 form-group mb-3">
+                       <label for="textarea"><h6>CATATAN</h6></label>
+                        <textarea type="text" rows="7" name="catkeyres_plan" class="form-control" disabled> <?php echo $bp->catkeyres_plan?></textarea>
+                        </div>
+                        </div>
+
+
+                   <!--KEY PARTNERS-->
+                   <div class="row">
+                        <div class="col-md-7 form-group mb-3">
+                        <label for="textarea"><h4>5.7 KEY PARTNERS</h4></label>
+                        <textarea id="content28" type="text" rows="7" name="key_partner_plan" class="form-control" disabled> <?php echo $bp->key_partner_plan?></textarea>
+                        </div>
+                      
+                        
+                        <div class="col-md-2 form-group mb-3">
+                        <label><h6>STATUS</h6></label>
+                        <input type="text" class="form-control" id="status_keypart_plan" name="status_keypart_plan" value="<?php echo ($bp->status_keypart_plan); ?>" disabled> 
+                       </div>
+                       <div class="col-md-3 form-group mb-3">
+                       <label for="textarea"><h6>CATATAN</h6></label>
+                        <textarea type="text" rows="7" name="catkeypart_plan" class="form-control" disabled> <?php echo $bp->catkeypart_plan?></textarea>
+                        </div>
+                        </div>
+
+                  <!--COST STRUCTURE-->
+                  <div class="row">
+                        <div class="col-md-7 form-group mb-3">
+                        <label for="textarea"><h4>5.8 COST STRUCTURE</h4></label>
+                        <textarea id="content29" type="text" rows="7" name="cost_plan" class="form-control" disabled> <?php echo $bp->cost_plan?></textarea>
+                        </div>
+                       
+                        
+                        <div class="col-md-2 form-group mb-3">
+                        <label><h6>STATUS</h6></label>
+                        <input type="text" class="form-control" id="status_cost_plan" name="status_cost_plan" value="<?php echo ($bp->status_cost_plan); ?>" disabled> 
+                       </div>
+                       <div class="col-md-3 form-group mb-3">
+                       <label for="textarea"><h6>CATATAN</h6></label>
+                        <textarea type="text" rows="7" name="catcost_plan" class="form-control" disabled> <?php echo $bp->catcost_plan?></textarea>
+                        </div>
+                        </div>
+
+
+                  
+                  <!--REVENUE STREAMS-->
+                  <div class="row">
+                        <div class="col-md-7 form-group mb-3">
+                        <label for="textarea"><h4>5.9 REVENUE STREAMS</h4></label>
+                        <textarea id="content30"  type="text" rows="7" name="revenue_plan" class="form-control" disabled> <?php echo $bp->revenue_plan?></textarea>
+                        </div>
+                       
+                        
+                        <div class="col-md-2 form-group mb-3">
+                        <label><h6>STATUS</h6></label>
+                        <input type="text" class="form-control" id="status_revenue_plan" name="status_revenue_plan" value="<?php echo ($bp->status_revenue_plan); ?>" disabled> 
+                       </div>
+                       <div class="col-md-3 form-group mb-3">
+                       <label for="textarea"><h6>CATATAN</h6></label>
+                        <textarea type="text" rows="7" name="catrevenue_plan" class="form-control" disabled> <?php echo $bp->catrevenue_plan?></textarea>
+                        </div>
+                        </div>
+                  
+
+
+                
+       
+                     <?php endforeach; ?>
+
+                  
+                   
                      <?php echo anchor('dosen/daftarproposal','<button class="btn btn-sm btn-primary mb-3"></i> Back </button> ')?>
                    
                      <br>
                      <br>
                      
                   </div>
-                 
+                  <script>
+                // Replace the <textarea id="editor1"> with a CKEditor 4
+                // instance, using default configuration.
+                CKEDITOR.replace( 'content22' );
+                CKEDITOR.replace( 'content23' );
+                CKEDITOR.replace( 'content24' );
+                CKEDITOR.replace( 'content25' );
+                CKEDITOR.replace( 'content26' );
+                CKEDITOR.replace( 'content27' );
+                CKEDITOR.replace( 'content28' );
+                CKEDITOR.replace( 'content29' );
+                CKEDITOR.replace( 'content30' );
+               </script>
                      
                </div>
                
