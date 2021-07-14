@@ -29,11 +29,11 @@
                         
                         <div class="col-md-2 form-group mb-3">
                         <label><h6>STATUS</h6></label>
-                        <input type="text" class="form-control" id="status_nama_su" name="status_nama_su" value="<?php echo ($su->status_nama_su); ?>" disabled> 
+                        <input type="text" class="form-control" id="status_nama_su" name="status_nama_su" value="<?php echo (@$su->status_nama_su); ?>" disabled> 
                        </div>
                        <div class="col-md-3 form-group mb-3">
                        <label for="textarea"><h6>CATATAN</h6></label>
-                        <textarea type="text" rows="1" name="catnama_su" class="form-control" disabled> <?php echo $su->catnama_su?></textarea>
+                        <textarea type="text" rows="1" name="catnama_su" class="form-control" disabled> <?php echo @$su->catnama_su?></textarea>
                         </div>
                         </div>
 
@@ -46,11 +46,11 @@
                        
                         <div class="col-md-2 form-group mb-3">
                         <label><h6>STATUS</h6></label>
-                        <input type="text" class="form-control" id="status_visi_su" name="status_visi_su" value="<?php echo ($su->status_visi_su); ?>" disabled> 
+                        <input type="text" class="form-control" id="status_visi_su" name="status_visi_su" value="<?php echo (@$su->status_visi_su); ?>" disabled> 
                        </div>
                        <div class="col-md-3 form-group mb-3">
                        <label for="textarea"><h6>CATATAN</h6></label>
-                        <textarea type="text" rows="7" name="catvisi_su" class="form-control" disabled> <?php echo $su->catvisi_su?></textarea>
+                        <textarea type="text" rows="7" name="catvisi_su" class="form-control" disabled> <?php echo @$su->catvisi_su?></textarea>
                         </div>
                         </div>
 
@@ -64,11 +64,11 @@
                        
                         <div class="col-md-2 form-group mb-3">
                         <label><h6>STATUS</h6></label>
-                        <input type="text" class="form-control" id="status_misi_su" name="status_misi_su" value="<?php echo ($su->status_misi_su); ?>" disabled> 
+                        <input type="text" class="form-control" id="status_misi_su" name="status_misi_su" value="<?php echo (@$su->status_misi_su); ?>" disabled> 
                        </div>
                        <div class="col-md-3 form-group mb-3">
                        <label for="textarea"><h6>CATATAN</h6></label>
-                        <textarea type="text" rows="7" name="catmisi_su" class="form-control" disabled> <?php echo $su->catmisi_su?></textarea>
+                        <textarea type="text" rows="7" name="catmisi_su" class="form-control" disabled> <?php echo @$su->catmisi_su?></textarea>
                         </div>
                         </div>
 
@@ -78,14 +78,14 @@
                         <div class="col-md-7 form-group mb-3">
                         <label><h4>1.4 STRUKTUR ORGANISASI</h4></label>
                         <br>
-                        <img src="<?php echo base_url().'assets/files/'.$su->struktur_start_up?>" class="img-thumbnail" width="450px"></div>
+                        <img src="<?php echo base_url().'assets/files/'.@$su->struktur_start_up?>" class="img-thumbnail" width="450px"></div>
                         <div class="col-md-2 form-group mb-3">
                         <label><h6>STATUS</h6></label>
-                        <input type="text" class="form-control" id="status_struktur_su" name="status_struktur_su" value="<?php echo ($su->status_struktur_su); ?>" disabled> 
+                        <input type="text" class="form-control" id="status_struktur_su" name="status_struktur_su" value="<?php echo (@$su->status_struktur_su); ?>" disabled> 
                        </div>
                        <div class="col-md-3 form-group mb-3">
                        <label for="textarea"><h6>CATATAN</h6></label>
-                        <textarea type="text" rows="1" name="catstruktur_su" class="form-control" disabled> <?php echo $su->catstruktur_su?></textarea>
+                        <textarea type="text" rows="1" name="catstruktur_su" class="form-control" disabled> <?php echo @$su->catstruktur_su?></textarea>
                         </div>
                         </div>
  
@@ -94,14 +94,14 @@
                         <div class="col-md-7 form-group mb-3">
                         <label><h4>1.5 LOGO PERUSAHAAN</h4></label>
                         <br>
-                        <img src="<?php echo base_url().'assets/files/'.$su->logo_start_up?>" class="img-thumbnail" width="450px"></div>
+                        <img src="<?php echo base_url().'assets/files/'.@$su->logo_start_up?>" class="img-thumbnail" width="450px"></div>
                         <div class="col-md-2 form-group mb-3">
                         <label><h6>STATUS</h6></label>
-                        <input type="text" class="form-control" id="status_logo_su" name="status_logo_su" value="<?php echo ($su->status_logo_su); ?>" disabled> 
+                        <input type="text" class="form-control" id="status_logo_su" name="status_logo_su" value="<?php echo (@$su->status_logo_su); ?>" disabled> 
                        </div>
                        <div class="col-md-3 form-group mb-3">
                        <label for="textarea"><h6>CATATAN</h6></label>
-                        <textarea type="text" rows="1" name="catlogo_su" class="form-control" disabled> <?php echo $su->catlogo_su?></textarea>
+                        <textarea type="text" rows="1" name="catlogo_su" class="form-control" disabled> <?php echo @$su->catlogo_su?></textarea>
                         </div>
                         </div>
 
@@ -110,15 +110,15 @@
                     <div class="row">
                         <div class="col-md-7 form-group mb-3">
                         <label><h4>1.6 TAGLINE PERUSAHAAN</h4></label>
-                        <input type="text" class="form-control" id="tagline_start_up" name="tagline_start_up" value="<?php echo strtoupper ($su->tagline_start_up); ?>" disabled> 
+                        <input type="text" class="form-control" id="tagline_start_up" name="tagline_start_up" value="<?php echo strtoupper (@$su->tagline_start_up); ?>" disabled> 
                         </div>
                         <div class="col-md-2 form-group mb-3">
                         <label><h6>STATUS</h6></label>
-                        <input type="text" class="form-control" id="status_tagline_su" name="status_tagline_su" value="<?php echo ($su->status_tagline_su); ?>" disabled> 
+                        <input type="text" class="form-control" id="status_tagline_su" name="status_tagline_su" value="<?php echo (@$su->status_tagline_su); ?>" disabled> 
                        </div>
                        <div class="col-md-3 form-group mb-3">
                        <label for="textarea"><h6>CATATAN</h6></label>
-                        <textarea type="text" rows="1" name="cattagline_su" class="form-control" disabled> <?php echo $su->cattagline_su?></textarea>
+                        <textarea type="text" rows="1" name="cattagline_su" class="form-control" disabled> <?php echo @$su->cattagline_su?></textarea>
                         </div>
                         </div>
 

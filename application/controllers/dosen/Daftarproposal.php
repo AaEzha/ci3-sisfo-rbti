@@ -49,6 +49,8 @@ class DaftarProposal extends CI_Controller {
         $data['detailpro1'] = $this->daftarproposal_model->detailpro1($id_proposal);
         //$data['detailpro1'] = $this->db->query("SELECT * FROM tb_start_up WHERE id_proposal='$id_proposal'")->result();
 
+		// var_dump($data['detailpro1']); die;
+
 
 
         /*$where=array('nim_mhs'=>$nim_mhs);

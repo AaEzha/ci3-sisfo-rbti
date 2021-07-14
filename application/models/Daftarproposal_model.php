@@ -109,26 +109,26 @@ class DaftarProposal_model extends CI_Model{
     {
         $this->input->post('id_proposal');
      //   $this->input->post('nama_start_up');
-        $this->input->post('status_nama_su');
-        $this->input->post('catnama_su');
+		 $status_nama_su = $this->input->post('status_nama_su');
+		 $catnama_su = $this->input->post('catnama_su');
      //   $this->input->post('visi_start_up');
-        $this->input->post('status_visi_su');
-        $this->input->post('catvisi_su');
+		 $status_visi_su = $this->input->post('status_visi_su');
+		 $catvisi_su = $this->input->post('catvisi_su');
      //   $this->input->post('misi_start_up');
-        $this->input->post('status_misi_su');
-        $this->input->post('catmisi_su');
+		 $status_misi_su = $this->input->post('status_misi_su');
+		 $catmisi_su = $this->input->post('catmisi_su');
      //   $this->input->post('struktur_start_up');
-        $this->input->post('status_struktur_su');
-        $this->input->post('catstruktur_su');
+		 $status_struktur_su = $this->input->post('status_struktur_su');
+		 $catstruktur_su = $this->input->post('catstruktur_su');
      //   $this->input->post('logo_start_up');
-        $this->input->post('status_logo_su');
-        $this->input->post('catlogo_su');
+		 $status_logo_su = $this->input->post('status_logo_su');
+		 $catlogo_su = $this->input->post('catlogo_su');
      //   $this->input->post('tagline_start_up');
-        $this->input->post('status_tagline_su');
-        $this->input->post('cattagline_su');
+		 $status_tagline_su = $this->input->post('status_tagline_su');
+		 $cattagline_su = $this->input->post('cattagline_su');
 
         $data = [ 
-            'id_proposal' => $id_proposal,
+            // 'id_proposal' => $id_proposal,
             //'nama_start_up' => $nama_start_up,
             'status_nama_su' => $status_nama_su,
             'catnama_su' => $catnama_su,
