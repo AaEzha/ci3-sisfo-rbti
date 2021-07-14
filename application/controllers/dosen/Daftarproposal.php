@@ -166,7 +166,7 @@ class DaftarProposal extends CI_Controller {
         } else {
             $this->daftarproposal_model->verifikasib1($id_proposal);
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> Judul Proposal berhasil ditambahkan </div>');
-            redirect('dosen/daftarproposal/detail1/');
+            redirect('dosen/daftarproposal/detail1/'.$id_proposal);
         }
     }
 
